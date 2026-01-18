@@ -1,68 +1,60 @@
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    if (targetId === '#') return;
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
-
-// Simple form validation and submission handling
 document.addEventListener('DOMContentLoaded', () => {
-  const contactForm = document.getElementById('contact-form');
+  const header = document.getElementById('header');
   
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const email = this.querySelector('input[type="email"]').value.trim();
-      const message = this.querySelector('textarea').value.trim();
-      
-      // Basic validation
-      if (!email || !email.includes('@') || !email.includes('.')) {
-        alert('Please enter a valid email address.');
-        return;
-      }
-      
-      if (message.length < 10) {
-        alert('Please provide a message with at least 10 characters.');
-        return;
-      }
-      
-      // Simulate form submission
-      alert('Thank you for your inquiry! We will respond shortly.');
-      this.reset();
-    });
-  }
-});
-
-// Lazy load video placeholder (if needed in future)
-// This is a lightweight implementation that could be expanded
-const observerOptions = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Placeholder for future video loading logic
-      entry.target.classList.add('loaded');
-      observer.unobserve(entry.target);
+  // Shrink header on scroll
+  const handleScroll = () => {
+    if (!header) return;
+    if (window.scrollY > 50) {
+      header.classList.add('shrink');
+    } else {
+      header.classList.remove('shrink');
     }
+  };
+  
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  
+  // Intersection Observer for scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  if (prefersReducedMotion) {
+    // If reduced motion is preferred, show all elements immediately
+    revealElements.forEach(el => el.classList.add('visible'));
+  } else {
+    // Otherwise, use Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    revealElements.forEach(el => observer.observe(el));
+  }
+  
+  // Smooth scroll for anchor links (fallback for browsers without CSS smooth scroll)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: prefersReducedMotion ? 'auto' : 'smooth',
+          block: 'start'
+        });
+        // Update focus for accessibility
+        targetElement.setAttribute('tabindex', '-1');
+        targetElement.focus({ preventScroll: true });
+      }
+    });
   });
-}, observerOptions);
-
-// Observe video placeholder for potential future enhancements
-const videoPlaceholder = document.querySelector('.video-placeholder');
-if (videoPlaceholder) {
-  observer.observe(videoPlaceholder);
-}
+});
