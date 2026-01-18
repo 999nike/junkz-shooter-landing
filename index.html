@@ -1,100 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Junkz Shooter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Junkz Shooter | Top-Down Space Shooter</title>
+  <meta name="description" content="Top-down space shooter. Combat, craft upgrades, unlock worlds. Earn Wizz Coins. Join the leaderboard.">
+  <!-- OpenGraph placeholders -->
+  <meta property="og:title" content="Junkz Shooter">
+  <meta property="og:description" content="Top-down space shooter. Combat, craft upgrades, unlock worlds. Earn Wizz Coins. Join the leaderboard.">
+  <meta property="og:image" content="placeholder-image.jpg">
+  <meta property="og:url" content="https://junkzshooter.com/">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>JUNKZ SHOOTER</h1>
-      <p class="tagline">Top‑down looter shooter with crafting & progression.</p>
-      <a href="#contact" class="cta-button">Back the Project</a>
-    </div>
+  <header id="header" class="sticky-header">
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#gameplay">Gameplay</a>
+      <a href="#progression">Progression</a>
+      <a href="#worlds">Worlds</a>
+      <a href="#currency">Currency</a>
+      <a href="#leaderboards">Leaderboards</a>
+      <a href="#trailer">Trailer</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
   </header>
-
   <main>
-    <section id="pitch" class="section">
-      <div class="container">
-        <h2 class="section-title">The Pitch</h2>
-        <p>Fast action, endless replayability, and deep loot systems. Indie‑crafted for PC and mobile. We're seeking strategic partners to accelerate development.</p>
+    <!-- 1. Hero -->
+    <section id="hero" class="reveal">
+      <h1>JUNKZ SHOOTER</h1>
+      <p>Top-down space shooter. Combat, craft, conquer.</p>
+      <div class="cta-group">
+        <a href="#trailer" class="cta-primary">Play the Demo</a>
+        <a href="#community" class="cta-secondary">Join Discord</a>
       </div>
     </section>
 
-    <section id="features" class="section">
-      <div class="container">
-        <h2 class="section-title">Key Features</h2>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <h3>Procedural Runs</h3>
-            <p>Every playthrough is unique with dynamic enemy spawns and loot tables.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Crafting System</h3>
-            <p>Scrap, build, and upgrade your arsenal from scavenged components.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Co‑op & Solo</h3>
-            <p>Play alone or team up for high‑risk, high‑reward missions.</p>
-          </div>
-        </div>
+    <!-- 2. Gameplay -->
+    <section id="gameplay" class="reveal">
+      <h2>Gameplay</h2>
+      <ul>
+        <li>Intense bullet patterns and skill-based combat.</li>
+        <li>Face unique enemy waves and multiple bosses.</li>
+        <li>Master your ship and weapons for victory.</li>
+      </ul>
+    </section>
+
+    <!-- 3. Progression & Crafting -->
+    <section id="progression" class="reveal">
+      <h2>Progression & Crafting</h2>
+      <ul>
+        <li>Combat feeds your progression loop.</li>
+        <li>Craft upgrades: shields, ships, weapons, bullets, lasers.</li>
+        <li>Long-term build progression system.</li>
+      </ul>
+    </section>
+
+    <!-- 4. Star Map / Worlds -->
+    <section id="worlds" class="reveal">
+      <h2>Star Map / Worlds</h2>
+      <p>Unlock new worlds and levels via the star map. Each world features unique enemy waves and distinct boss encounters.</p>
+    </section>
+
+    <!-- 5. In-game Currency -->
+    <section id="currency" class="reveal">
+      <h2>In-game Currency</h2>
+      <p>Earn Wizz Coins through gameplay. Spend them on upgrades, crafting, and mastery to enhance your arsenal.</p>
+    </section>
+
+    <!-- 6. Leaderboards / Community -->
+    <section id="leaderboards" class="reveal">
+      <h2>Leaderboards / Community</h2>
+      <p>Compete on global leaderboards. Enter your player name to climb the ranks and showcase your skill.</p>
+    </section>
+
+    <!-- 7. Trailer -->
+    <section id="trailer" class="reveal">
+      <h2>Trailer</h2>
+      <div class="placeholder-frame">
+        <p>Video Placeholder</p>
       </div>
     </section>
 
-    <section id="trailer" class="section">
-      <div class="container">
-        <h2 class="section-title">Trailer</h2>
-        <div class="video-placeholder">
-          <span>Video Placeholder</span>
-        </div>
+    <!-- 8. Gallery -->
+    <section id="gallery" class="reveal">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <div class="placeholder-img">Image 1</div>
+        <div class="placeholder-img">Image 2</div>
+        <div class="placeholder-img">Image 3</div>
+        <div class="placeholder-img">Image 4</div>
+        <div class="placeholder-img">Image 5</div>
+        <div class="placeholder-img">Image 6</div>
       </div>
     </section>
 
-    <section id="screenshots" class="section">
-      <div class="container">
-        <h2 class="section-title">Screenshots</h2>
-        <div class="screenshot-grid">
-          <div class="screenshot-placeholder">IMG 1</div>
-          <div class="screenshot-placeholder">IMG 2</div>
-          <div class="screenshot-placeholder">IMG 3</div>
-          <div class="screenshot-placeholder">IMG 4</div>
-          <div class="screenshot-placeholder">IMG 5</div>
-          <div class="screenshot-placeholder">IMG 6</div>
-        </div>
-      </div>
+    <!-- 9. Roadmap Teaser -->
+    <section id="roadmap" class="reveal">
+      <h2>Roadmap Teaser</h2>
+      <ul>
+        <li>Seasonal Events & New Bosses</li>
+        <li>Expanded Crafting System</li>
+        <li>Community Challenges</li>
+      </ul>
     </section>
 
-    <section id="roadmap" class="section">
-      <div class="container">
-        <h2 class="section-title">Roadmap</h2>
-        <ol class="roadmap-list">
-          <li><strong>Pre‑Alpha (Q4 2024):</strong> Core gameplay loop & vertical slice.</li>
-          <li><strong>Alpha (Q2 2025):</strong> Multiplayer integration & crafting depth.</li>
-          <li><strong>Beta (Q4 2025):</strong> Polish, optimization, and community testing.</li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <form id="contact-form" action="#" method="POST">
-          <input type="email" name="email" placeholder="Your email" required>
-          <textarea name="message" placeholder="Your message" rows="4" required></textarea>
-          <button type="submit" class="cta-button">Send Inquiry</button>
-        </form>
-      </div>
+    <!-- 10. Final CTA + Footer -->
+    <section id="final-cta" class="reveal">
+      <h2>Ready to Launch?</h2>
+      <a href="#hero" class="cta-primary">Play the Demo</a>
     </section>
   </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2024 Junkz Shooter. All rights reserved.</p>
-    </div>
+  <footer id="footer">
+    <p>&copy; 2025 Junkz Shooter. All rights reserved.</p>
+    <p><small>Privacy Policy | Terms of Service</small></p>
   </footer>
-
   <script src="app.js"></script>
 </body>
 </html>
