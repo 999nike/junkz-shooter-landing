@@ -1,287 +1,84 @@
-/* styles.css - Dark Sci-Fi Theme */
-:root {
-  --bg: #0a0a0a;
-  --bg-alt: #111111;
-  --primary: #00ffcc;
-  --accent: #ff006e;
-  --text: #e0e0e0;
-  --text-muted: #888888;
-  --header-bg: rgba(10, 10, 10, 0.9);
-  --header-height: 70px;
-  --header-shrink-height: 50px;
-  --font-primary: system-ui, -apple-system, sans-serif;
-  --border-radius: 4px;
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
 
 body {
-  margin: 0;
-  font-family: var(--font-primary);
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.6;
-  overflow-x: hidden;
+    font-family: system-ui, sans-serif;
+    line-height: 1.6;
+    background: #111;
+    color: #fff;
 }
 
-/* Sticky Header */
 header {
-  position: sticky;
-  top: 0;
-  background: var(--header-bg);
-  backdrop-filter: blur(8px);
-  height: var(--header-height);
-  transition: height 0.3s ease, background-color 0.3s ease;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+    background: #222;
+    padding: 2rem;
+    text-align: center;
 }
 
-header.shrink {
-  height: var(--header-shrink-height);
-  background-color: rgba(0, 0, 0, 0.95);
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  gap: 1rem;
-  padding: 0 1rem;
-  flex-wrap: wrap;
+header p {
+    color: #aaa;
+    margin-bottom: 1rem;
 }
 
 nav a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: color 0.2s, border-color 0.2s;
-  padding: 0.25rem 0.5rem;
-  border-bottom: 2px solid transparent;
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #444;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
 }
 
-nav a:hover, nav a:focus {
-  color: var(--primary);
-  border-bottom-color: var(--primary);
-  outline: none;
+nav a:hover {
+    background: #666;
 }
 
-/* Main Layout */
 main {
-  padding: 1rem;
-  max-width: 900px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 section {
-  padding: 3rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background: #222;
+    border-radius: 8px;
 }
 
-section:last-of-type {
-  border-bottom: none;
+section h2 {
+    margin-bottom: 1rem;
+    color: #4a9eff;
 }
 
-/* Typography */
-h1, h2, h3 {
-  color: var(--primary);
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  text-transform: uppercase;
-  text-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
-}
-
-h2 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  border-left: 4px solid var(--accent);
-  padding-left: 1rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-  color: var(--text);
-}
-
-p {
-  margin-bottom: 1rem;
-  color: var(--text-muted);
-}
-
-strong {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* Buttons & CTAs */
-.cta-group {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.cta-primary, .cta-secondary {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: var(--border-radius);
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.cta-primary {
-  background: var(--primary);
-  color: #000;
-  box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
-}
-
-.cta-primary:hover, .cta-primary:focus {
-  transform: translateY(-2px);
-  box-shadow: 0 0 25px rgba(0, 255, 204, 0.6);
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
-
-.cta-secondary {
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-}
-
-.cta-secondary:hover, .cta-secondary:focus {
-  background: rgba(0, 255, 204, 0.1);
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
-
-/* Lists */
 ul {
-  list-style: none;
-  padding: 0;
+    list-style: disc;
+    padding-left: 1.5rem;
 }
 
-ul li {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-ul li::before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-}
-
-/* Placeholders */
-.placeholder-frame, .placeholder-img {
-  background: var(--bg-alt);
-  border: 1px dashed var(--text-muted);
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px;
-  border-radius: var(--border-radius);
-  margin: 1rem 0;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-}
-
-.gallery-grid .placeholder-img {
-  min-height: 120px;
-}
-
-/* Scroll Reveal Animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Footer */
 footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Accessibility & Focus */
-:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
-/* Mobile-First Responsive */
-@media (max-width: 768px) {
-  nav {
-    gap: 0.5rem;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding: 0.5rem;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  nav a {
-    white-space: nowrap;
-    font-size: 0.8rem;
-  }
-  
-  section {
-    padding: 2rem 0;
-  }
-  
-  .cta-group {
-    flex-direction: column;
-  }
-  
-  .cta-primary, .cta-secondary {
-    width: 100%;
     text-align: center;
-  }
+    padding: 2rem;
+    background: #222;
+    color: #aaa;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0a0a0a;
-    --text: #e0e0e0;
-  }
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
 }
