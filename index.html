@@ -5,8 +5,7 @@
   <title>Junkz Shooter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Fast-paced arcade shooter. Survive waves, crush bosses, collect WizzCoin, climb the leaderboard." />
-
-<link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
@@ -34,6 +33,7 @@
       <div class="card heroMain">
         <div class="kicker"><span class="dot"></span><span>Fast-paced multiplayer-ready shooter</span></div>
         <h2 class="title">Survive the waves.<br/>Crush the bosses.<br/>Bank the WizzCoin.</h2>
+
         <p class="sub">
           Jump straight into high-speed combat with tight controls, punchy FX, and a progression loop built for replays.
           Built for mobile and desktop — no install required.
@@ -41,13 +41,14 @@
 
         <div class="ctaRow">
           <a
-  class="btn btnPrimary"
-  href="https://space-junkz-shooter.vercel.app"
-  target="_blank"
-  rel="noopener"
->
-  Play Now
-</a>
+            class="btn btnPrimary"
+            href="https://space-junkz-shooter.vercel.app"
+            target="_blank"
+            rel="noopener"
+          >
+            Play Now
+          </a>
+
           <button class="btn btnGhost" id="openTrailerBtn" type="button">Watch Trailer</button>
           <a class="btn btnGhost" href="#waitlist">Get Updates</a>
         </div>
@@ -76,6 +77,7 @@
             </div>
             <button class="x" id="openTrailerBtn2" type="button">OPEN</button>
           </div>
+
           <div class="videoBody">
             If you already have a video, add it to the repo and set the <b>TRAILER_SRC</b> below.
             Click OPEN to test it in a modal.
@@ -86,36 +88,39 @@
 
     <section class="card" id="features">
       <h3 class="secTitle">Features</h3>
+
       <div class="featureGrid">
         <div class="feature">
           <b>Quick Matches</b>
           <p>Jump into action in seconds. Tight loop, no fluff, pure shooter flow.</p>
         </div>
+
         <div class="feature bossFeature">
-  <div class="bossTop">
-    <b>Boss Encounters</b>
-    <span class="bossTag">Boss families</span>
-  </div>
+          <div class="bossTop">
+            <b>Boss Encounters</b>
+            <span class="bossTag">Boss families</span>
+          </div>
 
-  <div class="bossGrid">
-    <figure class="bossCard">
-      <img src="/assets/boss/oldARIES2.png" alt="Boss: Aries" loading="lazy" />
-      <figcaption>ARIES</figcaption>
-    </figure>
+          <div class="bossGrid">
+            <figure class="bossCard">
+              <img src="/assets/boss/oldARIES2.png" alt="Boss: Aries" loading="lazy" />
+              <figcaption>ARIES</figcaption>
+            </figure>
 
-    <figure class="bossCard">
-      <img src="/assets/boss/oldCANCER2.png" alt="Boss: Cancer" loading="lazy" />
-      <figcaption>CANCER</figcaption>
-    </figure>
+            <figure class="bossCard">
+              <img src="/assets/boss/oldCANCER2.png" alt="Boss: Cancer" loading="lazy" />
+              <figcaption>CANCER</figcaption>
+            </figure>
 
-    <figure class="bossCard">
-      <img src="/assets/boss/oldSCORPIO2.png" alt="Boss: Scorpio" loading="lazy" />
-      <figcaption>SCORPIO</figcaption>
-    </figure>
-  </div>
+            <figure class="bossCard">
+              <img src="/assets/boss/oldSCORPIO2.png" alt="Boss: Scorpio" loading="lazy" />
+              <figcaption>SCORPIO</figcaption>
+            </figure>
+          </div>
 
-  <p class="bossDesc">Multi-phase fights with distinct patterns. Win by learning, not grinding.</p>
-</div>
+          <p class="bossDesc">Multi-phase fights with distinct patterns. Win by learning, not grinding.</p>
+        </div>
+
         <div class="feature">
           <b>WizzCoin Economy</b>
           <p>Loot drops and progression hooks built into gameplay. Spend smart, survive longer.</p>
@@ -125,37 +130,21 @@
 
     <section class="card" id="screens">
       <h3 class="secTitle">Screens</h3>
+
       <div class="shots">
-  <div class="shot">
-    <img src="/assets/images/25th_m16.jpg" alt="Gameplay screenshot 1" loading="lazy" />
-  </div>
+        <div class="shot">
+          <img src="/assets/images/25th_m16.jpg" alt="Gameplay screenshot 1" loading="lazy" />
+        </div>
 
-  <div class="shot">
-    <img src="/assets/images/homebase_ankh_chamber.png" alt="Gameplay screenshot 2" loading="lazy" />
-  </div>
+        <div class="shot">
+          <img src="/assets/images/homebase_ankh_chamber.png" alt="Gameplay screenshot 2" loading="lazy" />
+        </div>
 
-  <div class="shot">
-    <div class="shotPlaceholder">Add one more image into <b>/assets/images</b> and set it here.</div>
-  </div>
-  .shot img{
-  width: 100%;
-  heightheight: 100%;
-  object-fit: cover;
-  display: block;
-}
+        <div class="shot">
+          <div class="shotPlaceholder">Add one more image into <b>/assets/images</b> and set it here.</div>
+        </div>
+      </div>
 
-.shotPlaceholder{
-  padding: 16px;
-  text-align:center;
-  color: rgba(232,246,255,0.55);
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-.shotPlaceholder b{
-  color: rgba(232,246,255,0.85);
-}
-</div>
       <p style="margin:10px 0 0; color: var(--muted); font-size: 12px;">
         Tip: put images in <b>/public</b> and replace these placeholders with &lt;img src="/screenshot_1.png"&gt;.
       </p>
@@ -163,15 +152,18 @@
 
     <section class="card" id="roadmap">
       <h3 class="secTitle">Roadmap</h3>
+
       <div class="featureGrid">
         <div class="feature">
           <b>Beta</b>
           <p>Balance passes, stability, device QA, and gameplay tuning.</p>
         </div>
+
         <div class="feature">
           <b>Launch</b>
           <p>Polished landing, trailer, screenshots, and a clean onboarding flow.</p>
         </div>
+
         <div class="feature">
           <b>Seasons</b>
           <p>New bosses, missions, cosmetics, and WizzCoin sinks.</p>
@@ -181,11 +173,13 @@
 
     <section class="card" id="waitlist">
       <h3 class="secTitle">Join the Waitlist</h3>
+
       <div class="waitlist">
         <form id="waitlistForm">
           <input id="email" type="email" placeholder="Your email" autocomplete="email" required />
           <button class="btn btnPrimary" type="submit">Subscribe</button>
         </form>
+
         <p style="margin:10px 0 0; color: var(--muted); font-size: 12px;">
           This is front-end only right now (stores nothing). If you want, I’ll wire it to your backend later.
         </p>
@@ -204,6 +198,7 @@
         <strong>Junkz Shooter — Trailer</strong>
         <button class="x" id="closeTrailerBtn" type="button">CLOSE</button>
       </div>
+
       <video id="trailerVideo" controls playsinline>
         <!-- IMPORTANT: set trailer path here -->
         <source src="./src/game/assets/trailer.mp4" type="video/mp4" />
@@ -224,9 +219,9 @@
 
     function openModal(){
       modal.style.display = "flex";
-      // attempt play (may be blocked until user gesture; open is a gesture)
       vid.play().catch(()=>{});
     }
+
     function closeModal(){
       modal.style.display = "none";
       vid.pause();
