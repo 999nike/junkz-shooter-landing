@@ -1,107 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Junkz Shooter</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <div class="logo">Junkz Shooter</div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="hero">
-    <h1>Fast‑paced multiplayer shooter</h1>
-    <p>Join the chaos.</p>
-    <a href="#" class="cta">Play Game</a>
-  </section>
-
-  <!-- Media Section -->
-  <section id="media">
-    <h2>Watch Trailer</h2>
-    <video autoplay muted loop playsinline>
-      <source src="video-placeholder.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <a href="#" class="cta">Watch Trailer</a>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features">
-    <h2>Features</h2>
-    <div class="cards">
-      <article class="card">
-        <h3>Quick Matches</h3>
-        <p>Jump into action within seconds.</p>
-      </article>
-      <article class="card">
-        <h3>Unique Weapons</h3>
-        <p>Experiment with crazy gadgets.</p>
-      </article>
-      <article class="card">
-        <h3>Cross‑Platform</h3>
-        <p>Play with friends on any device.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Screenshots Section -->
-  <section id="screenshots">
-    <h2>Screenshots</h2>
-    <div class="gallery">
-      <figure>
-        <img src="screenshot1.png" alt="Gameplay screenshot 1">
-        <figcaption>Intense battle</figcaption>
-      </figure>
-      <figure>
-        <img src="screenshot2.png" alt="Gameplay screenshot 2">
-        <figcaption>Team coordination</figcaption>
-      </figure>
-      <figure>
-        <img src="screenshot3.png" alt="Gameplay screenshot 3">
-        <figcaption>Explosive action</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- Roadmap Section -->
-  <section id="roadmap">
-    <h2>Roadmap</h2>
-    <ul class="roadmap-list">
-      <li><strong>Beta</strong> – Q4 2025</li>
-      <li><strong>Launch</strong> – Q1 2026</li>
-      <li><strong>Season Updates</strong> – Ongoing</li>
-    </ul>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <dl>
-      <dt>Is the game free?</dt>
-      <dd>Yes, Junkz Shooter is free-to-play.</dd>
-      <dt>What platforms are supported?</dt>
-      <dd>PC, console, and mobile.</dd>
-      <dt>How do I join the waitlist?</dt>
-      <dd>Sign up below.</dd>
-    </dl>
-  </section>
-
-  <!-- Waitlist Section -->
-  <section id="waitlist">
-    <h2>Join the Waitlist</h2>
-    <form action="#" method="POST">
-      <input type="email" name="email" placeholder="Your email" required>
-      <button type="submit" class="cta">Subscribe</button>
-    </form>
-  </section>
-
-  <footer id="footer">
-    <p>&copy; 2025 Junkz Shooter. All rights reserved.</p>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
-</html>
+body { margin:0; font-family:system-ui, sans-serif; }
+.header { background:#111; color:#fff; padding:1rem; text-align:center; }
+.logo { font-size:1.5rem; }
+.hero { position:relative; overflow:hidden; background-image: url("assets/nebula_bg.png"); background-size: cover; }
+.hero::before { content:""; position:absolute; inset:0; background: rgba(0,0,0,0.5); z-index:-1; }
+.hero video { width:100%; height:auto; display:block; }
+.hero h1 { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#fff; font-size:2rem; text-align:center; z-index:1; }
+.hero p { position:absolute; top:55%; left:50%; transform:translate(-50%,-50%); color:#fff; font-size:1rem; text-align:center; z-index:1; }
+.cta { display:block; width:90%; max-width:300px; margin:1rem auto; padding:1rem; background:#ff4d4d; color:#fff; text-align:center; text-decoration:none; border-radius:4px; z-index:1; }
+.features { padding:1.5rem; text-align:center; }
+.features h2 { margin-bottom:1rem; }
+.features ul { list-style:none; padding:0; }
+.features li { margin:0.5rem 0; }
+.footer { background:#222; color:#ccc; text-align:center; padding:1rem; font-size:0.9rem; }
