@@ -1,14 +1,109 @@
-body { margin:0; font-family:system-ui, sans-serif; }
-.header { background:#111; color:#fff; padding:1rem; text-align:center; }
-.logo { font-size:1.5rem; }
-.hero { position:relative; overflow:hidden; background-image: url("assets/nebula_bg.png"); background-size: cover; }
-.hero::before { content:""; position:absolute; inset:0; background: rgba(0,0,0,0.5); z-index:-1; }
-.hero video { width:100%; height:auto; display:block; }
-.hero h1 { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#fff; font-size:2rem; text-align:center; z-index:1; }
-.hero p { position:absolute; top:55%; left:50%; transform:translate(-50%,-50%); color:#fff; font-size:1rem; text-align:center; z-index:1; }
-.cta { display:block; width:90%; max-width:300px; margin:1rem auto; padding:1rem; background:#ff4d4d; color:#fff; text-align:center; text-decoration:none; border-radius:4px; z-index:1; }
-.features { padding:1.5rem; text-align:center; }
-.features h2 { margin-bottom:1rem; }
-.features ul { list-style:none; padding:0; }
-.features li { margin:0.5rem 0; }
-.footer { background:#222; color:#ccc; text-align:center; padding:1rem; font-size:0.9rem; }
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Junkz Shooter</title>
+  <meta name="description" content="Fast-paced multiplayer shooter. Jump in, gear up, and dominate." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">Junkz Shooter</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <!-- Optional: if you later swap to video, drop a <video> here. -->
+    <div class="hero-inner">
+      <h1>Fast-paced multiplayer shooter</h1>
+      <p>Jump into chaos. Quick matches. Unique weapons. Cross-platform.</p>
+
+      <div class="hero-actions">
+        <a class="cta" href="play.html">Play Game</a>
+        <a class="cta secondary" href="#trailer">Watch Trailer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAILER -->
+  <section id="trailer" class="section">
+    <h2>Watch Trailer</h2>
+    <p class="muted">Drop your trailer link in the button for now.</p>
+    <a class="cta" href="#" onclick="alert('Add your trailer URL in index.html'); return false;">Watch Trailer</a>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section features">
+    <h2>Features</h2>
+    <div class="feature-grid">
+      <div class="card">
+        <h3>Quick Matches</h3>
+        <p>Jump into action within seconds.</p>
+      </div>
+      <div class="card">
+        <h3>Unique Weapons</h3>
+        <p>Experiment with crazy gadgets and loadouts.</p>
+      </div>
+      <div class="card">
+        <h3>Cross-Platform</h3>
+        <p>Play with friends on any device.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS (placeholders) -->
+  <section class="section">
+    <h2>Screenshots</h2>
+    <p class="muted">Add images later (or point these to real files).</p>
+    <div class="shot-grid">
+      <div class="shot">Gameplay screenshot 1</div>
+      <div class="shot">Gameplay screenshot 2</div>
+      <div class="shot">Gameplay screenshot 3</div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section class="section">
+    <h2>Roadmap</h2>
+    <ul class="list">
+      <li>Beta — Q4 2025</li>
+      <li>Launch — Q1 2026</li>
+      <li>Season Updates — Ongoing</li>
+    </ul>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2>FAQ</h2>
+    <div class="faq">
+      <div class="card">
+        <h3>Is the game free?</h3>
+        <p>Yes, Junkz Shooter is free-to-play.</p>
+      </div>
+      <div class="card">
+        <h3>What platforms are supported?</h3>
+        <p>PC, console, and mobile.</p>
+      </div>
+      <div class="card">
+        <h3>How do I join the waitlist?</h3>
+        <p>Drop your email below.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section class="section">
+    <h2>Join the Waitlist</h2>
+    <form class="waitlist" onsubmit="event.preventDefault(); alert('Hook this to a backend later.');">
+      <input type="email" required placeholder="you@email.com" />
+      <button class="cta" type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    © 2025 Junkz Shooter. All rights reserved.
+  </footer>
+</body>
+</html>
