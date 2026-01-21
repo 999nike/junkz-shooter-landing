@@ -307,6 +307,59 @@
       background: rgba(0,0,0,0.16);
       min-height: 92px;
     }
+
+    /* --- Boss Feature --- */
+.bossFeature{ min-height: 92px; }
+.bossTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+.bossTag{
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(232,246,255,0.65);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.18);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+.bossGrid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:10px;
+  margin-bottom:10px;
+}
+.bossCard{
+  margin:0;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.16);
+  overflow:hidden;
+}
+.bossCard img{
+  width:100%;
+  height:110px;
+  object-fit: cover;
+  display:block;
+}
+.bossCard figcaption{
+  padding: 8px 10px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232,246,255,0.78);
+}
+.bossDesc{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+@media (max-width: 920px){
+  .bossGrid{ grid-template-columns: 1fr; }
+  .bossCard img{ height: 160px; }
+}
+
     .feature b{ display:block; margin-bottom: 6px; }
     .feature p{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.45; }
 
@@ -496,10 +549,31 @@
           <b>Quick Matches</b>
           <p>Jump into action in seconds. Tight loop, no fluff, pure shooter flow.</p>
         </div>
-        <div class="feature">
-          <b>Boss Encounters</b>
-          <p>Multi-phase fights with distinct patterns. Win by learning, not grinding.</p>
-        </div>
+        <div class="feature bossFeature">
+  <div class="bossTop">
+    <b>Boss Encounters</b>
+    <span class="bossTag">Boss families</span>
+  </div>
+
+  <div class="bossGrid">
+    <figure class="bossCard">
+      <img src="/assets/boss/oldARIES2.png" alt="Boss: Aries" loading="lazy" />
+      <figcaption>ARIES</figcaption>
+    </figure>
+
+    <figure class="bossCard">
+      <img src="/assets/boss/oldCANCER2.png" alt="Boss: Cancer" loading="lazy" />
+      <figcaption>CANCER</figcaption>
+    </figure>
+
+    <figure class="bossCard">
+      <img src="/assets/boss/oldSCORPIO2.png" alt="Boss: Scorpio" loading="lazy" />
+      <figcaption>SCORPIO</figcaption>
+    </figure>
+  </div>
+
+  <p class="bossDesc">Multi-phase fights with distinct patterns. Win by learning, not grinding.</p>
+</div>
         <div class="feature">
           <b>WizzCoin Economy</b>
           <p>Loot drops and progression hooks built into gameplay. Spend smart, survive longer.</p>
@@ -510,10 +584,32 @@
     <section class="card" id="screens">
       <h3 class="secTitle">Screens</h3>
       <div class="shots">
-        <div class="shot">Add screenshot_1.png</div>
-        <div class="shot">Add screenshot_2.png</div>
-        <div class="shot">Add screenshot_3.png</div>
-      </div>
+  <div class="shot">
+    <img src="/assets/images/25th_m16.jpg" alt="Gameplay screenshot 1" loading="lazy" />
+  </div>
+
+  <div class="shot">
+    <img src="/assets/images/homebase_ankh_chamber.png" alt="Gameplay screenshot 2" loading="lazy" />
+  </div>
+
+  <div class="shot">
+    <div class="shotPlaceholder">Add one more image into <b>/assets/images</b> and set it here.</div>
+  </div>
+  .shot img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.shotPlaceholder{
+  padding: 16px;
+  text-align:center;
+  color: rgba(232,246,255,0.55);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.shotPlaceholder b{ color: rgba(232,246,255,0.85); }
+</div>
       <p style="margin:10px 0 0; color: var(--muted); font-size: 12px;">
         Tip: put images in <b>/public</b> and replace these placeholders with &lt;img src="/screenshot_1.png"&gt;.
       </p>
