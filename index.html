@@ -380,6 +380,24 @@
       font-size: 12px;
       overflow:hidden;
     }
+    .shot img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.shotPlaceholder{
+  padding: 16px;
+  text-align:center;
+  color: rgba(232,246,255,0.55);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.shotPlaceholder b{
+  color: rgba(232,246,255,0.85);
+}
 
     .waitlist{
       display:flex;
@@ -597,10 +615,11 @@
   </div>
   .shot img{
   width: 100%;
-  height: 100%;
+  heightheight: 100%;
   object-fit: cover;
   display: block;
 }
+
 .shotPlaceholder{
   padding: 16px;
   text-align:center;
@@ -608,7 +627,10 @@
   font-size: 12px;
   line-height: 1.4;
 }
-.shotPlaceholder b{ color: rgba(232,246,255,0.85); }
+
+.shotPlaceholder b{
+  color: rgba(232,246,255,0.85);
+}
 </div>
       <p style="margin:10px 0 0; color: var(--muted); font-size: 12px;">
         Tip: put images in <b>/public</b> and replace these placeholders with &lt;img src="/screenshot_1.png"&gt;.
