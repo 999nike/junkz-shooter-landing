@@ -1,122 +1,158 @@
-// === Wizz Cube Embed (logo cube) ===
-// Drop-in Three.js cube that uses wizzlab_logo.png on all faces.
+// ===============================
+// WIZZ CUBE EMBED v1.1
+// PNG Logo → Neon 3D Cube
+// Optional Inner Galaxy
+// ===============================
 
 (function () {
-  const THREE_SRC = "https://cdn.jsdelivr.net/gh/mrdoob/three.js@r146/build/three.min.js";
+  // ---------- CONFIG ----------
+  const cfg = window.WIZZ_CUBE || {};
 
-  function ensureThree(cb) {
-    if (window.THREE) return cb();
+  const mountId = cfg.mountId || null;
+
+  const textureUrl = cfg.textureUrl || "wizzlab_logo.png";
+
+  const cubeSize = cfg.cubeSize || 1.6;
+  const spinSpeed = cfg.spin ?? 0.25;
+
+  const faceOpacity = cfg.faceOpacity ?? 0.7;
+
+  const edgeColor = cfg.edgeColor || 0x00ff66;
+  const edgeGlow = cfg.edgeGlow ?? 1.6;
+
+  // ---- INNER GALAXY ----
+  const innerGalaxy = cfg.innerGalaxy ?? true;
+  const innerTextureUrl = cfg.innerTextureUrl || "galaxy_inside.jpg";
+  const innerOpacity = cfg.innerOpacity ?? 1.0;
+
+  // ---------- LOAD THREE ----------
+  if (!window.THREE) {
     const s = document.createElement("script");
-    s.src = THREE_SRC;
-    s.onload = cb;
+    s.src = "https://unpkg.com/three@0.158.0/build/three.min.js";
+    s.onload = boot;
     document.head.appendChild(s);
+  } else {
+    boot();
   }
 
   function boot() {
-    // ---- CONFIG ----
-    const cfg = window.WIZZ_CUBE || {};
-    const size = cfg.size ?? 240;                 // px
-    const depth = cfg.depth ?? 0.6;               // cube size scale (visual)
-    const spin = cfg.spin ?? 0.35;                // radians/sec (slow)
-    const tilt = cfg.tilt ?? 0.25;                // radians
-    const edgeColor = cfg.edgeColor ?? 0x00ff66;  // neon green
-    const edgeOpacity = cfg.edgeOpacity ?? 0.9;
-    const faceOpacity = cfg.faceOpacity ?? 1.0;
+    // ---------- MOUNT ----------
+    let mount;
+    if (mountId) {
+      mount = document.getElementById(mountId);
+    }
+    if (!mount) {
+      mount = document.createElement("div");
+      mount.style.position = "fixed";
+      mount.style.right = "30px";
+      mount.style.bottom = "30px";
+      mount.style.width = "260px";
+      mount.style.height = "260px";
+      mount.style.zIndex = "50";
+      document.body.appendChild(mount);
+    }
 
-    // texture path: default assumes same folder as index.html
-    const textureUrl = cfg.textureUrl ?? "wizzlab_logo.png";
-
-    // ---- CONTAINER ----
-    const mount = document.createElement("div");
-    mount.id = "wizzCubeMount";
-    mount.style.cssText = `
-      position: relative;
-      width: ${size}px;
-      height: ${size}px;
-      margin: 0 auto;
-      pointer-events: none;
-    `;
-    // If you want to mount into a specific element, set window.WIZZ_CUBE.mountId = "someId"
-    const target = cfg.mountId ? document.getElementById(cfg.mountId) : null;
-    (target || document.body).appendChild(mount);
-
-    // ---- THREE SETUP ----
+    // ---------- SCENE ----------
     const scene = new THREE.Scene();
 
-    const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
-    camera.position.set(0, 0.2, 3.0);
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      mount.clientWidth / mount.clientHeight,
+      0.1,
+      100
+    );
+    camera.position.z = 4;
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
-    renderer.setSize(size, size);
+    const renderer = new THREE.WebGLRenderer({
+      alpha: true,
+      antialias: true,
+    });
+    renderer.setSize(mount.clientWidth, mount.clientHeight);
+    renderer.setPixelRatio(window.devicePixelRatio || 1);
     mount.appendChild(renderer.domElement);
 
-    // Lights (kept simple; faces mainly read via texture)
-    scene.add(new THREE.AmbientLight(0xffffff, 0.85));
-    const key = new THREE.DirectionalLight(0xffffff, 1.2);
-    key.position.set(2, 3, 4);
-    scene.add(key);
+    // ---------- LIGHTS ----------
+    scene.add(new THREE.AmbientLight(0xffffff, 0.55));
 
-    // ---- TEXTURE + MATERIALS ----
-    const tex = new THREE.TextureLoader().load(textureUrl, () => {
+    const keyLight = new THREE.PointLight(0x00ff88, 1.2);
+    keyLight.position.set(3, 3, 3);
+    scene.add(keyLight);
+
+    // ---------- TEXTURE ----------
+    const loader = new THREE.TextureLoader();
+    const logoTex = loader.load(textureUrl, () => {
       renderer.render(scene, camera);
     });
-    tex.anisotropy = 8;
+    logoTex.anisotropy = 8;
 
+    // ---------- FACE MATERIAL ----------
     const faceMat = new THREE.MeshStandardMaterial({
-      map: tex,
-      transparent: faceOpacity < 1,
+      map: logoTex,
+      transparent: true,
       opacity: faceOpacity,
-      metalness: 0.15,
+      metalness: 0.25,
       roughness: 0.35,
-      emissive: new THREE.Color(0x001a10),
-      emissiveIntensity: 0.6,
+      emissive: new THREE.Color(0x002010),
+      emissiveIntensity: 0.7,
     });
 
-    // Cube geometry
-    const geo = new THREE.BoxGeometry(depth, depth, depth);
-    const cube = new THREE.Mesh(geo, [
-      faceMat, faceMat, faceMat, faceMat, faceMat, faceMat
-    ]);
-    cube.rotation.x = tilt;
+    const materials = Array(6).fill(faceMat);
+
+    // ---------- CUBE ----------
+    const geo = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
+    const cube = new THREE.Mesh(geo, materials);
     scene.add(cube);
 
-    // Neon edges
-    const edges = new THREE.EdgesGeometry(geo, 20);
+    // ---------- INNER GALAXY ----------
+    if (innerGalaxy) {
+      const galaxyTex = loader.load(innerTextureUrl, () => {
+        renderer.render(scene, camera);
+      });
+
+      const innerMat = new THREE.MeshBasicMaterial({
+        map: galaxyTex,
+        side: THREE.BackSide,
+        transparent: innerOpacity < 1,
+        opacity: innerOpacity,
+      });
+
+      const innerGeo = new THREE.BoxGeometry(
+        cubeSize * 0.98,
+        cubeSize * 0.98,
+        cubeSize * 0.98
+      );
+
+      const innerBox = new THREE.Mesh(innerGeo, innerMat);
+      cube.add(innerBox);
+    }
+
+    // ---------- GLOWING EDGES ----------
+    const edges = new THREE.EdgesGeometry(geo);
     const edgeMat = new THREE.LineBasicMaterial({
       color: edgeColor,
+      linewidth: 1,
       transparent: true,
-      opacity: edgeOpacity,
+      opacity: edgeGlow,
     });
-    const edgeLines = new THREE.LineSegments(edges, edgeMat);
-    cube.add(edgeLines);
+    const wire = new THREE.LineSegments(edges, edgeMat);
+    cube.add(wire);
 
-    // Outer glow “cheat” (sprite-like halo using a second edges pass)
-    const glowMat = new THREE.LineBasicMaterial({
-      color: edgeColor,
-      transparent: true,
-      opacity: 0.28,
+    // ---------- RESIZE ----------
+    window.addEventListener("resize", () => {
+      const w = mount.clientWidth;
+      const h = mount.clientHeight;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
     });
-    const glowLines = new THREE.LineSegments(edges, glowMat);
-    glowLines.scale.set(1.03, 1.03, 1.03);
-    cube.add(glowLines);
 
-    // ---- ANIMATE ----
-    let last = performance.now();
-    function loop(now) {
-      const dt = Math.min(0.05, (now - last) / 1000);
-      last = now;
-
-      cube.rotation.y += spin * dt;
-
+    // ---------- ANIMATE ----------
+    function animate() {
+      requestAnimationFrame(animate);
+      cube.rotation.x += spinSpeed * 0.002;
+      cube.rotation.y += spinSpeed * 0.003;
       renderer.render(scene, camera);
-      requestAnimationFrame(loop);
     }
-    requestAnimationFrame(loop);
-
-    // ---- RESIZE (if you want responsive later) ----
-    // Keeping fixed-size by default to avoid layout shifts.
+    animate();
   }
-
-  ensureThree(boot);
 })();
