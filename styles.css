@@ -509,3 +509,337 @@ video{
   .shots{ grid-template-columns: 1fr; }
   .shot{ height: 180px; }
 }
+
+/* Screens video card */
+.shotVideo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  border-radius: inherit;
+  background: #000;
+}
+
+/* --------- ACTIVE ALPHA NOTICE --------- */
+.alphaNotice{
+  margin: 16px 0 0;
+  padding: 11px 13px;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.5;
+  border: 1px solid rgba(255,253,139,0.28);
+  border-radius: 12px;
+  background: rgba(255,253,139,0.07);
+}
+
+
+/* ---------- PATCH 7 MOBILE POLISH ---------- */
+
+@media (max-width:768px){
+
+  .hero{
+    padding-top:32px;
+  }
+
+  .title{
+    font-size:clamp(2rem,8vw,3rem);
+    line-height:1.05;
+  }
+
+  .sub{
+    font-size:15px;
+  }
+
+  .ctaRow{
+    gap:10px;
+  }
+
+  .mini{
+    gap:8px;
+  }
+
+  .pill{
+    font-size:11px;
+    padding:7px 10px;
+  }
+
+  .statGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+
+/* ---------- FULL FEATURE PAGE ---------- */
+.featurePage{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap:24px;
+  align-items:center;
+}
+
+.featureEyebrow{
+  display:inline-block;
+  margin-bottom:10px;
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(255,253,139,.82);
+}
+
+.featurePageCopy h3{
+  margin:0 0 12px;
+  font-size:clamp(26px,4vw,48px);
+  line-height:1.05;
+}
+
+.featurePageCopy > p{
+  margin:0;
+  max-width:640px;
+  color:var(--muted);
+  line-height:1.65;
+}
+
+.featurePoints{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:20px;
+}
+
+.featurePoints div{
+  padding:13px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(0,0,0,.18);
+}
+
+.featurePoints b,
+.featurePoints span{
+  display:block;
+}
+
+.featurePoints b{
+  margin-bottom:5px;
+}
+
+.featurePoints span{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.45;
+}
+
+.featurePageMedia{
+  overflow:hidden;
+  position:relative;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,0,.2);
+}
+
+.featurePageMedia img{
+  display:block;
+  width:100%;
+  min-height:340px;
+  object-fit:cover;
+}
+
+.featurePageMedia > span{
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(0,0,0,.72);
+  border:1px solid rgba(255,255,255,.12);
+  font-size:10px;
+  letter-spacing:.14em;
+}
+
+@media (max-width:768px){
+  .featurePage{
+    grid-template-columns:1fr;
+  }
+
+  .featurePoints{
+    grid-template-columns:1fr;
+  }
+
+  .featurePageMedia img{
+    min-height:240px;
+  }
+}
+
+
+/* ---------- CRAFTING AND ECONOMY PAGE ---------- */
+.economyPage{
+  padding:32px;
+}
+
+.economyIntro{
+  max-width:720px;
+}
+
+.economyIntro h3{
+  margin:0 0 12px;
+  font-size:clamp(28px,4vw,46px);
+  line-height:1.05;
+}
+
+.economyIntro p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.65;
+}
+
+.economyGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:24px;
+}
+
+.economyCard{
+  padding:18px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(0,0,0,.20);
+}
+
+.economyCard b{
+  display:block;
+  margin:10px 0 7px;
+  font-size:16px;
+}
+
+.economyCard p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+}
+
+.economyIcon{
+  font-size:24px;
+}
+
+.upgradePath{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:8px;
+  margin-top:18px;
+}
+
+.upgradePath div{
+  padding:13px 10px;
+  text-align:center;
+  border-radius:13px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.035);
+}
+
+.upgradePath span,
+.upgradePath b{
+  display:block;
+}
+
+.upgradePath span{
+  margin-bottom:7px;
+  color:rgba(255,253,139,.72);
+  font-size:10px;
+  letter-spacing:.12em;
+}
+
+.upgradePath b{
+  font-size:12px;
+}
+
+@media (max-width:768px){
+  .economyPage{
+    padding:22px;
+  }
+
+  .economyGrid{
+    grid-template-columns:1fr;
+  }
+
+  .upgradePath{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+
+/* ---------- BOSS SHOWCASE ---------- */
+
+.bossGallery{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:12px;
+margin-top:24px;
+}
+
+.bossGallery img{
+width:100%;
+aspect-ratio:1;
+object-fit:cover;
+border-radius:14px;
+cursor:pointer;
+border:1px solid rgba(255,255,255,.12);
+transition:.25s;
+}
+
+.bossGallery img:hover{
+transform:scale(1.03);
+}
+
+@media(max-width:768px){
+
+.bossGallery{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+
+/* ---------- BOSS LIGHTBOX ---------- */
+
+.bossLightbox{
+position:fixed;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,.94);
+opacity:0;
+visibility:hidden;
+transition:.25s;
+z-index:9999;
+}
+
+.bossLightbox.show{
+opacity:1;
+visibility:visible;
+}
+
+#bossLarge{
+max-width:min(92vw,1200px);
+max-height:90vh;
+border-radius:18px;
+box-shadow:0 0 70px rgba(0,255,255,.25);
+}
+
+.bossClose{
+position:absolute;
+top:20px;
+right:30px;
+font-size:54px;
+cursor:pointer;
+color:#fff;
+line-height:1;
+user-select:none;
+}
+
+.bossClose:hover{
+color:#6df7ff;
+}
