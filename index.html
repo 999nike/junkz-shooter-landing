@@ -5,7 +5,7 @@
   <title>Junkz Shooter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Fast-paced arcade shooter. Survive waves, crush bosses, collect WizzCoin, climb the leaderboard." />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles.css?v=alpha-update-1" />
 </head>
 
 <body>
@@ -26,7 +26,7 @@
         <a href="#home-base">Home Base</a>
         <a href="#bosses">Bosses</a>
         <a href="#screens">Gallery</a>
-        <a href="#roadmap">Roadmap</a>
+        <a href="#alpha-update">Alpha Update</a>
       </nav>
     </header>
 
@@ -51,7 +51,7 @@
           </a>
 
           <button class="btn btnGhost" id="openTrailerBtn" type="button">Watch Gameplay</button>
-          <a class="btn btnGhost" href="#roadmap">View Roadmap</a>
+          <a class="btn btnGhost" href="#alpha-update">View Alpha Update</a>
         </div>
 
         <p class="alphaNotice">
@@ -88,47 +88,107 @@
       </div>
     </div>
 
-    <section class="card" id="features">
-      <h3 class="secTitle">Features</h3>
-
-      <div class="featureGrid">
-        <div class="feature">
-          <b>Core Gameplay Loop</b>
-          <p>Fight through enemy waves, collect Coins and Salvage, defeat the boss, return to Home Base and craft permanent upgrades for the next mission.</p>
-        </div>
-
-        <div class="feature bossFeature">
-          <div class="bossTop">
-            <b>Multi-Phase Boss Battles</b>
-            <span class="bossTag">Boss families</span>
-          </div>
-
-          <div class="bossGrid">
-            <figure class="bossCard">
-              <img src="/assets/boss/oldARIES2.png" alt="Boss: Aries" loading="lazy" />
-              <figcaption>ARIES VANGUARD</figcaption>
-            </figure>
-
-            <figure class="bossCard">
-              <img src="/assets/boss/oldCANCER2.png" alt="Boss: Cancer" loading="lazy" />
-              <figcaption>CANCER SIEGECRAFT</figcaption>
-            </figure>
-
-            <figure class="bossCard">
-              <img src="/assets/boss/oldSCORPIO2.png" alt="Boss: Scorpio" loading="lazy" />
-              <figcaption>SCORPIO WAR MACHINE</figcaption>
-            </figure>
-          </div>
-
-          <p class="bossDesc">Learn unique attack patterns, survive giant projectile barrages and defeat expanding boss families with distinct mechanics.</p>
-        </div>
-
-        <div class="feature">
-          <b>Weapons & Ship Evolution</b>
-          <p>Transform your starter ship through permanent upgrades including Twin Shot, Rapid Fire, laser technology, shield systems and combat sidekicks.</p>
-        </div>
-
+    <section class="card gameplayLoop" id="features">
+      <div class="loopIntro">
+        <span class="loopEyebrow">Fight • Recover • Evolve</span>
+        <h3>Every mission makes your ship stronger.</h3>
+        <p>
+          Launch into hostile space, survive enemy waves, recover valuable resources
+          and defeat multi-phase bosses. Then return to Home Base and turn each victory
+          into permanent power for the next battle.
+        </p>
       </div>
+
+      <div class="loopRoute">
+        <article class="loopStep">
+          <span class="loopNumber">01</span>
+          <span class="loopIcon">🚀</span>
+          <h4>Launch Mission</h4>
+          <p>Choose your next destination from the World Map.</p>
+        </article>
+
+        <article class="loopStep">
+          <span class="loopNumber">02</span>
+          <span class="loopIcon">⚔️</span>
+          <h4>Fight Waves</h4>
+          <p>Dodge incoming fire and destroy hostile formations.</p>
+        </article>
+
+        <article class="loopStep">
+          <span class="loopNumber">03</span>
+          <span class="loopIcon">💎</span>
+          <h4>Collect Resources</h4>
+          <p>Risk the danger to recover currencies, health and shields.</p>
+        </article>
+
+        <article class="loopStep">
+          <span class="loopNumber">04</span>
+          <span class="loopIcon">🔥</span>
+          <h4>Build Combat Power</h4>
+          <p>Evolve your weapons and ship during the mission.</p>
+        </article>
+
+        <article class="loopStep">
+          <span class="loopNumber">05</span>
+          <span class="loopIcon">👑</span>
+          <h4>Defeat the Boss</h4>
+          <p>Learn its phases, beam weapons and attack patterns.</p>
+        </article>
+
+        <article class="loopStep">
+          <span class="loopNumber">06</span>
+          <span class="loopIcon">🏠</span>
+          <h4>Return Home</h4>
+          <p>Bank your Coins, Salvage and WizzCoin at Home Base.</p>
+        </article>
+
+        <article class="loopStep">
+          <span class="loopNumber">07</span>
+          <span class="loopIcon">📈</span>
+          <h4>Craft & Evolve</h4>
+          <p>Unlock permanent technology and harder missions.</p>
+        </article>
+      </div>
+
+      <div class="loopCycle">
+        <span>↻</span>
+        <strong>Stronger ship. Harder mission. Bigger rewards.</strong>
+      </div>
+
+      <div class="loopDetails">
+        <div class="loopStrip lootStrip">
+          <b>Loot recovered</b>
+          <div>
+            <span>🪙 Coins</span>
+            <span>♻️ Salvage</span>
+            <span>💎 WizzCoin</span>
+            <span>❤️ Health</span>
+            <span>🛡️ Shields</span>
+            <span>⚡ Power-ups</span>
+          </div>
+        </div>
+
+        <div class="loopStrip weaponStrip">
+          <b>In-mission firepower</b>
+          <div>
+            <span>Laser</span>
+            <i>→</i>
+            <span>Rapid Fire</span>
+            <i>→</i>
+            <span>Twin Shot</span>
+            <i>→</i>
+            <span>Shield Matrix</span>
+            <i>→</i>
+            <span>Sidekicks</span>
+            <i>→</i>
+            <span>Rockets</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="loopFinish">
+        Every run makes you stronger. Every victory opens the way to a harder battle.
+      </p>
     </section>
 
     <section class="card featurePage" id="home-base">
@@ -246,16 +306,16 @@
 
       <div class="bossGallery">
 
-        <img src="/assets/boss/boss1.jpg" alt="">
-        <img src="/assets/boss/boss2.jpg" alt="">
-        <img src="/assets/boss/boss3.jpg" alt="">
-        <img src="/assets/boss/boss4.jpg" alt="">
-        <img src="/assets/boss/boss5.jpg" alt="">
-        <img src="/assets/boss/boss6.jpg" alt="">
-        <img src="/assets/boss/boss7.jpg" alt="">
-        <img src="/assets/boss/boss8.jpg" alt="">
-        <img src="/assets/boss/boss9.jpg" alt="">
-        <img src="/assets/boss/boss10.jpg" alt="">
+        <img src="http://192.168.1.204/media/bosses/AlphaFighter.png" alt="Alpha Fighter" loading="lazy">
+        <img src="http://192.168.1.204/media/bosses/ghostspitother.png" alt="Ghost Spitter" loading="lazy">
+        <img src="http://192.168.1.204/media/bosses/lvl2bossreplacement.png" alt="Level 2 Boss" loading="lazy">
+        <img src="http://192.168.1.204/media/bosses/lvl5bosses.png" alt="Level 5 Bosses" loading="lazy">
+        <img src="http://192.168.1.204/media/bosses/oldCANCER12.png" alt="Cancer Prime" loading="lazy">
+        <img src="http://192.168.1.204/media/bosses/oldCANCER2.png" alt="Cancer Siegecraft" loading="lazy">
+        <img src="http://192.168.1.204/media/bosses/oldFIGHTER2.png" alt="Drax Fighter" loading="lazy">
+        <img src="http://192.168.1.204/media/bosses/oldSCORPIO12.png" alt="Scorpio War Machine" loading="lazy">
+        <img src="http://192.168.1.204/media/bosses/oldVIRGO12.png" alt="Virgo Vanguard" loading="lazy">
+        <img src="http://192.168.1.204/media/bosses/void_boss_lvl5.png" alt="Void Boss" loading="lazy">
 
       </div>
 
@@ -265,24 +325,135 @@
 
     </section>
 
-    <section class="card" id="roadmap">
-      <h3 class="secTitle">Roadmap</h3>
+    <section class="alphaUpdate" id="alpha-update">
+      <div class="alphaUpdateHead">
+        <span class="updateEyebrow">Space Junkz Shooter • Alpha Update</span>
+        <h3>A bigger universe. A stronger game.</h3>
+        <p>
+          Space Junkz Shooter has taken a major step forward with new progression systems,
+          improved combat, expanded missions and a large performance overhaul.
+        </p>
+      </div>
 
-      <div class="featureGrid">
-        <div class="feature">
-          <b>Home Base, Crafting & Economy</b>
-          <p>Balance passes, stability, device QA, and gameplay tuning.</p>
+      <article class="updateHero alphaNow">
+        <div class="updateCopy">
+          <span class="updateLabel">Playable Now</span>
+          <h4>Five missions. One expanding war.</h4>
+          <p>
+            Fight through an expanding mission map, survive enemy formations and face
+            multiple boss encounters while building a permanently stronger combat ship.
+          </p>
+
+          <div class="updatePoints">
+            <span>🏠 Home Base</span>
+            <span>🔨 Crafting</span>
+            <span>💰 WizzCoin Economy</span>
+            <span>♻️ Salvage</span>
+            <span>🚀 Weapon Evolution</span>
+            <span>👑 Boss Battles</span>
+            <span>🏆 Leaderboards</span>
+            <span>📈 XP Progression</span>
+          </div>
         </div>
 
-        <div class="feature">
-          <b>More Boss Families, New Missions & Multiplayer Testing</b>
-          <p>Polished landing, trailer, screenshots, and a clean onboarding flow.</p>
+        <div class="updateVisual missionVisual" aria-label="Current alpha statistics">
+          <div class="missionCore">
+            <strong>ALPHA</strong>
+            <span>FULLY PLAYABLE</span>
+          </div>
+
+          <div class="statOrbit statOne"><b>5</b><span>MISSIONS</span></div>
+          <div class="statOrbit statTwo"><b>10+</b><span>BOSSES</span></div>
+          <div class="statOrbit statThree"><b>7</b><span>UPGRADE TIERS</span></div>
+        </div>
+      </article>
+
+      <article class="updateHero performanceHero">
+        <div class="updateVisual performanceVisual" aria-label="Performance improvements">
+          <div class="performanceGauge">
+            <span>OPTIMISED</span>
+            <strong>60</strong>
+            <small>FPS TARGET</small>
+          </div>
+
+          <div class="performanceLines">
+            <span style="--level:92%">Frame stability</span>
+            <span style="--level:86%">Battle rendering</span>
+            <span style="--level:89%">Enemy spawning</span>
+            <span style="--level:94%">Mobile interface</span>
+          </div>
         </div>
 
-        <div class="feature">
-          <b>Seasons</b>
-          <p>New bosses, missions, cosmetics, and WizzCoin sinks.</p>
+        <div class="updateCopy">
+          <span class="updateLabel">Built for Bigger Battles</span>
+          <h4>Smoother combat when space gets chaotic.</h4>
+          <p>
+            A large optimisation pass reduces rendering load, controls memory use and
+            keeps battles responsive when the screen fills with enemies, trails and effects.
+          </p>
+
+          <div class="updateList">
+            <span>⚡ Improved frame stability</span>
+            <span>👾 Optimised enemy spawning</span>
+            <span>💥 Lighter trail and explosion effects</span>
+            <span>🎯 Twin-stick mobile aiming</span>
+            <span>🎮 Improved gamepad support</span>
+            <span>📱 Cleaner mobile HUD</span>
+          </div>
         </div>
+      </article>
+
+      <article class="updateHero futureHero">
+        <div class="updateCopy">
+          <span class="updateLabel">The Universe Is Expanding</span>
+          <h4>The Alpha is only the beginning.</h4>
+          <p>
+            New worlds will bring harder missions, legendary technology, rare loot and
+            boss classes built to push every combat system further.
+          </p>
+
+          <div class="updatePoints futurePoints">
+            <span>🌍 Missions 6–10</span>
+            <span>⭐ Legendary Weapons</span>
+            <span>💎 Rare Loot</span>
+            <span>✈️ Airstrikes</span>
+            <span>👑 New Boss Classes</span>
+            <span>🏠 Home Base Expansion</span>
+            <span>⚔️ Multiplayer Testing</span>
+            <span>🎉 Community Events</span>
+          </div>
+        </div>
+
+        <div class="updateVisual futureVisual" aria-label="Future mission roadmap">
+          <span class="mapPath"></span>
+
+          <div class="mapNode activeNode">
+            <b>05</b>
+            <small>ALPHA FRONTIER</small>
+          </div>
+
+          <div class="mapNode nextNode">
+            <b>06</b>
+            <small>NEXT MISSION</small>
+          </div>
+
+          <div class="mapNode lockedNode">
+            <b>10</b>
+            <small>UNKNOWN WORLD</small>
+          </div>
+        </div>
+      </article>
+
+      <div class="alphaStatus">
+        <b>CURRENT ALPHA</b>
+        <span>5 MISSIONS</span>
+        <span>BOSS BATTLES</span>
+        <span>CRAFTING</span>
+        <span>ECONOMY</span>
+        <span>HOME BASE</span>
+        <span>LEADERBOARDS</span>
+        <span>MOBILE</span>
+        <span>CONTROLLER</span>
       </div>
     </section>
 
