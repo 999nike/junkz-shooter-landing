@@ -391,6 +391,7 @@ section{
   gap: 10px;
 }
 .shot{
+  position:relative;
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.10);
   background: rgba(0,0,0,0.16);
@@ -401,6 +402,21 @@ section{
   color: rgba(232,246,255,0.55);
   font-size: 12px;
   overflow:hidden;
+}
+.shotCaption{
+  position:absolute;
+  right:8px;
+  bottom:8px;
+  left:8px;
+  padding:7px 9px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;
+  background:rgba(3,4,10,.78);
+  color:var(--text);
+  font-size:10px;
+  letter-spacing:.04em;
+  text-align:center;
+  backdrop-filter:blur(6px);
 }
 .shot img{
   width: 100%;
@@ -451,6 +467,42 @@ footer{
   font-size: 12px;
   padding: 16px 0 6px;
   text-align:center;
+}
+.footerIdentity{
+  display:grid;
+  gap:4px;
+}
+.footerIdentity b{
+  color:var(--text);
+  font-size:14px;
+}
+.footerLinks{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin:12px 0;
+}
+.footerLinks a{
+  color:var(--a1);
+  text-decoration:none;
+}
+.footerLinks a:hover{
+  text-decoration:underline;
+}
+footer p{
+  margin:0;
+}
+.projectCta{
+  align-items:flex-start;
+}
+.projectCta p{
+  flex:1 1 480px;
+  margin:0;
+  color:var(--muted);
+  line-height:1.6;
+}
+.projectCta .ctaRow{
+  margin:0;
 }
 
 /* --------- MODAL --------- */
@@ -755,6 +807,48 @@ video{
   font-size:12px;
 }
 
+.upgradePath .upgradeActive{
+  border-color:rgba(91,231,255,.32);
+  background:rgba(91,231,255,.07);
+  box-shadow:inset 0 0 20px rgba(91,231,255,.05);
+}
+
+.upgradePath .upgradeActive span{
+  color:var(--a1);
+}
+
+.cacheDetail{
+  margin-top:18px;
+  padding:18px;
+  border:1px solid rgba(255,253,139,.18);
+  border-radius:16px;
+  background:rgba(255,253,139,.035);
+}
+
+.cacheDetail p{
+  margin:10px 0 0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
+
+.cacheRewards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:14px;
+}
+
+.cacheRewards span{
+  padding:6px 8px;
+  border:1px solid rgba(255,253,139,.15);
+  border-radius:999px;
+  color:rgba(232,246,255,.8);
+  font-size:9px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
 @media (max-width:768px){
   .economyPage{
     padding:22px;
@@ -777,6 +871,10 @@ display:grid;
 grid-template-columns:repeat(5,1fr);
 gap:12px;
 margin-top:24px;
+}
+
+.bossRoutes{
+  margin:20px 0;
 }
 
 .bossGallery img{

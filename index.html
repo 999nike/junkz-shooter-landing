@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Junkz Shooter</title>
+  <title>Space Junkz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fast-paced arcade shooter. Survive waves, crush bosses, collect WizzCoin, climb the leaderboard." />
+  <meta name="description" content="Space Junkz is a progression-driven HTML5 Canvas arcade shooter with handcrafted missions, HomeBase upgrades and legendary boss loot." />
   <link rel="stylesheet" href="/styles.css?v=alpha-update-1" />
 </head>
 
@@ -16,71 +16,70 @@
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
         <div>
-          <h1>Junkz Shooter</h1>
-          <p>Arcade chaos • Boss fights • WizzCoin economy</p>
+          <h1>Space Junkz</h1>
+          <p>W.I.Z.Z. LAB STUDIOS • DevMaster / 999nike</p>
         </div>
       </div>
 
       <nav>
-        <a href="#game-loop">Game Loop</a>
-        <a href="#home-base">Home Base</a>
+        <a href="#features">Game Loop</a>
+        <a href="#home-base">HomeBase</a>
+        <a href="#screens">Screens</a>
         <a href="#bosses">Bosses</a>
-        <a href="#screens">Gallery</a>
         <a href="#alpha-update">Alpha Update</a>
+        <a href="https://space-junkz-shooter.vercel.app/game.html" target="_blank" rel="noopener">Play</a>
       </nav>
     </header>
 
     <div class="hero">
       <div class="card heroMain">
-        <div class="kicker"><span class="dot"></span><span>Active Alpha Build</span></div>
-        <h2 class="title">Fight. Collect.<br/>Craft. Conquer.</h2>
+        <div class="kicker"><span class="dot"></span><span>Active Development Build</span></div>
+        <h2 class="title">Fight. Salvage.<br/>Upgrade. Survive.</h2>
 
         <p class="sub">
-          A fast-paced arcade space shooter with permanent progression, crafting, evolving weapons
-          and massive multi-phase boss battles. Built for mobile and desktop — no install required.
+          Space Junkz is a fast, progression-driven arcade space shooter built from scratch with HTML5 Canvas
+          and vanilla JavaScript. Fight through handcrafted missions, destroy multi-stage bosses, recover
+          WizzCoins and Salvage, unlock stronger weapons, open Legendary Caches and push deeper into hostile space.
         </p>
 
         <div class="ctaRow">
           <a
             class="btn btnPrimary"
-            href="https://space-junkz-shooter.vercel.app"
+            href="https://space-junkz-shooter.vercel.app/game.html"
             target="_blank"
             rel="noopener"
           >
-            Play Alpha
+            Play Space Junkz
           </a>
 
-          <button class="btn btnGhost" id="openTrailerBtn" type="button">Watch Gameplay</button>
-          <a class="btn btnGhost" href="#alpha-update">View Alpha Update</a>
+          <a class="btn btnGhost" href="https://github.com/999nike/space-junkz-shooter" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btnGhost" href="#features">Explore the Campaign</a>
         </div>
 
         <p class="alphaNotice">
-          ⚠️ Active Alpha Build — New features, bosses and gameplay updates are released regularly.
-          Join early and help shape Space Junkz Shooter.
+          Active development build — campaign balance, performance and the Unstable Void Route continue to evolve.
         </p>
 
         <div class="mini">
-          <div class="pill">5 Playable Missions</div>
-          <div class="pill">Home Base</div>
-          <div class="pill">Crafting</div>
-          <div class="pill">Boss Battles</div>
-          <div class="pill">Mobile First</div>
-          <div class="pill">Leaderboards</div>
+          <div class="pill">4 Playable Missions</div>
+          <div class="pill">World Map Campaign</div>
+          <div class="pill">HomeBase Progression</div>
+          <div class="pill">Legendary Loot</div>
         </div>
       </div>
 
       <div class="card heroSide">
         <div class="statGrid">
-          <div class="stat"><b>7+</b><span>Missions wired</span></div>
-          <div class="stat"><b>Bosses</b><span>Multi-phase fights</span></div>
-          <div class="stat"><b>WizzCoin</b><span>Loot + upgrades</span></div>
-          <div class="stat"><b>Mobile</b><span>Joystick + fire</span></div>
+          <div class="stat"><b>10+</b><span>Boss encounters</span></div>
+          <div class="stat"><b>Desktop + Mobile</b><span>Flexible controls</span></div>
+          <div class="stat"><b>120 Hz</b><span>Canvas support</span></div>
+          <div class="stat"><b>Zero</b><span>Game engine</span></div>
         </div>
 
         <div class="heroMedia">
   <img
     src="/assets/images/hero_gameplay.png"
-    alt="Junkz Shooter gameplay"
+    alt="Space Junkz gameplay"
     loading="eager"
   />
   <div class="heroMediaLabel">LIVE GAMEPLAY</div>
@@ -90,12 +89,12 @@
 
     <section class="card gameplayLoop" id="features">
       <div class="loopIntro">
-        <span class="loopEyebrow">Fight • Recover • Evolve</span>
-        <h3>Every mission makes your ship stronger.</h3>
+        <span class="loopEyebrow">Intro • Black Hole • World Map</span>
+        <h3>Every mission advances the campaign.</h3>
         <p>
-          Launch into hostile space, survive enemy waves, recover valuable resources
-          and defeat multi-phase bosses. Then return to Home Base and turn each victory
-          into permanent power for the next battle.
+          The cinematic intro battle leads through a black-hole transition to the World Map.
+          Each handcrafted mission runs through a modular mission architecture, records its
+          results and carries earned profile rewards back to the map or HomeBase.
         </p>
       </div>
 
@@ -103,50 +102,50 @@
         <article class="loopStep">
           <span class="loopNumber">01</span>
           <span class="loopIcon">🚀</span>
-          <h4>Launch Mission</h4>
-          <p>Choose your next destination from the World Map.</p>
+          <h4>Launch from the World Map</h4>
+          <p>Choose the next unlocked destination in the campaign.</p>
         </article>
 
         <article class="loopStep">
           <span class="loopNumber">02</span>
           <span class="loopIcon">⚔️</span>
-          <h4>Fight Waves</h4>
-          <p>Dodge incoming fire and destroy hostile formations.</p>
+          <h4>Enter a Handcrafted Mission</h4>
+          <p>Face distinct waves, objectives and hostile formations.</p>
         </article>
 
         <article class="loopStep">
           <span class="loopNumber">03</span>
           <span class="loopIcon">💎</span>
-          <h4>Collect Resources</h4>
-          <p>Risk the danger to recover currencies, health and shields.</p>
+          <h4>Destroy Enemies and Bosses</h4>
+          <p>Break formations, escorts and multi-stage command ships.</p>
         </article>
 
         <article class="loopStep">
           <span class="loopNumber">04</span>
           <span class="loopIcon">🔥</span>
-          <h4>Build Combat Power</h4>
-          <p>Evolve your weapons and ship during the mission.</p>
+          <h4>Recover Resources</h4>
+          <p>Collect WizzCoins, Salvage, XP and temporary power.</p>
         </article>
 
         <article class="loopStep">
           <span class="loopNumber">05</span>
           <span class="loopIcon">👑</span>
-          <h4>Defeat the Boss</h4>
-          <p>Learn its phases, beam weapons and attack patterns.</p>
+          <h4>Secure Legendary Caches</h4>
+          <p>Damage and break rare boss drops to acquire them once.</p>
         </article>
 
         <article class="loopStep">
           <span class="loopNumber">06</span>
           <span class="loopIcon">🏠</span>
-          <h4>Return Home</h4>
-          <p>Bank your Coins, Salvage and WizzCoin at Home Base.</p>
+          <h4>Return to Map or HomeBase</h4>
+          <p>Review mission results and bank persistent rewards.</p>
         </article>
 
         <article class="loopStep">
           <span class="loopNumber">07</span>
           <span class="loopIcon">📈</span>
-          <h4>Craft & Evolve</h4>
-          <p>Unlock permanent technology and harder missions.</p>
+          <h4>Upgrade and Continue</h4>
+          <p>Purchase permanent upgrades and push deeper into the campaign.</p>
         </article>
       </div>
 
@@ -159,29 +158,28 @@
         <div class="loopStrip lootStrip">
           <b>Loot recovered</b>
           <div>
-            <span>🪙 Coins</span>
+            <span>🪙 WizzCoins</span>
             <span>♻️ Salvage</span>
-            <span>💎 WizzCoin</span>
-            <span>❤️ Health</span>
-            <span>🛡️ Shields</span>
-            <span>⚡ Power-ups</span>
+            <span>📈 XP</span>
+            <span>🏆 Score</span>
+            <span>💎 Legendary Cache</span>
           </div>
         </div>
 
         <div class="loopStrip weaponStrip">
           <b>In-mission firepower</b>
           <div>
-            <span>Laser</span>
+            <span>Base Weapon</span>
             <i>→</i>
-            <span>Rapid Fire</span>
+            <span>Projectile Output</span>
             <i>→</i>
-            <span>Twin Shot</span>
+            <span>Multi-shot</span>
             <i>→</i>
-            <span>Shield Matrix</span>
+            <span>Sidekick</span>
             <i>→</i>
-            <span>Sidekicks</span>
+            <span>Straight Rockets</span>
             <i>→</i>
-            <span>Rockets</span>
+            <span>Homing Rockets</span>
           </div>
         </div>
       </div>
@@ -196,15 +194,16 @@
         <span class="featureEyebrow">Permanent Progression</span>
         <h3>Return to Home Base. Rebuild stronger.</h3>
         <p>
-          Every mission feeds back into your ship. Bank Coins, recover Salvage and use the
-          Crafting Obelisk to unlock permanent combat upgrades before taking on harder worlds.
+          The Ankh Chamber is the campaign progression hub. Store recovered resources, purchase
+          active permanent upgrades and open secured Legendary Caches for weighted permanent
+          ship-stat rewards tied to your local profile.
         </p>
 
         <div class="featurePoints">
-          <div><b>Crafting Obelisk</b><span>Unlock weapons, shields and ship technology.</span></div>
-          <div><b>Wizz Vault</b><span>Manage currencies, resources and future rare loot.</span></div>
-          <div><b>Upgrade Altar</b><span>Evolve lasers, rapid fire, twin shot and sidekicks.</span></div>
-          <div><b>Expanding Hub</b><span>Future NPCs, rooms and progression systems.</span></div>
+          <div><b>Storage</b><span>Keep WizzCoins, Salvage, cache totals and persistent profile rewards.</span></div>
+          <div><b>Upgrade Altar</b><span>Laser Core, Rapid Fire and Twin Shot are active permanent upgrades.</span></div>
+          <div><b>Legendary Cache Vault</b><span>Open combat-earned caches for one weighted permanent stat increase.</span></div>
+          <div><b>Future Branches</b><span>Displayed shield, hull, drone, magnet and weapon branches remain in development.</span></div>
         </div>
       </div>
 
@@ -220,41 +219,68 @@
 
     <section class="card economyPage" id="economy">
       <div class="economyIntro">
-        <span class="featureEyebrow">Craft • Upgrade • Evolve</span>
-        <h3>Build a stronger ship after every mission.</h3>
+        <span class="featureEyebrow">Earn • Upgrade • Persist</span>
+        <h3>Turn every mission result into progression.</h3>
         <p>
-          Combat rewards feed a permanent progression system. Collect resources,
-          craft new technology and evolve your weapons before facing tougher missions.
+          Resources, profile XP, arcade score and mission records persist between runs.
+          Temporary firepower builds during combat while HomeBase upgrades and Legendary
+          rewards permanently strengthen your ship.
         </p>
       </div>
 
       <div class="economyGrid">
         <article class="economyCard">
-          <span class="economyIcon">🟡</span>
-          <b>Coins</b>
-          <p>Earned throughout combat and used across your core progression systems.</p>
+          <span class="economyIcon">🪙</span>
+          <b>WizzCoins</b>
+          <p>Primary currency used alongside Salvage for permanent upgrades.</p>
         </article>
 
         <article class="economyCard">
           <span class="economyIcon">♻️</span>
           <b>Salvage</b>
-          <p>Recovered from missions and spent crafting permanent ship technology.</p>
+          <p>Recovered from missions and used for HomeBase upgrades.</p>
+        </article>
+
+        <article class="economyCard">
+          <span class="economyIcon">📈</span>
+          <b>XP and Score</b>
+          <p>Persistent progression XP plus arcade score, mission records and lifetime statistics.</p>
         </article>
 
         <article class="economyCard">
           <span class="economyIcon">💎</span>
-          <b>WizzCoin</b>
-          <p>Your wider progression currency for rewards, unlocks and future systems.</p>
+          <b>Legendary Caches</b>
+          <p>Boss drops that must be shot open in combat, then opened at HomeBase for a permanent stat reward.</p>
         </article>
       </div>
 
       <div class="upgradePath">
-        <div><span>01</span><b>Laser Core</b></div>
-        <div><span>02</span><b>Rapid Fire</b></div>
-        <div><span>03</span><b>Twin Shot</b></div>
-        <div><span>04</span><b>Shield Matrix</b></div>
-        <div><span>05</span><b>Sidekick Bay</b></div>
-        <div><span>06</span><b>Future Tech</b></div>
+        <div class="upgradeActive"><span>Active</span><b>Laser Core</b></div>
+        <div class="upgradeActive"><span>Active</span><b>Rapid Fire</b></div>
+        <div class="upgradeActive"><span>Active</span><b>Twin Shot</b></div>
+        <div><span>Future</span><b>Shield Matrix</b></div>
+        <div><span>Future</span><b>Hull Plating</b></div>
+        <div><span>Future</span><b>Sidekick Bay</b></div>
+        <div><span>Future</span><b>Salvage Magnet</b></div>
+        <div><span>Future</span><b>Coin Magnet</b></div>
+        <div><span>Future</span><b>Plasma Lance</b></div>
+        <div><span>Future</span><b>Ship Frame</b></div>
+      </div>
+
+      <div class="cacheDetail">
+        <span class="featureEyebrow">Legendary Cache Protocol</span>
+        <p>
+          A full boss can drop one cache. Contact and the pickup magnet cannot collect it:
+          player weapons must break its own health pool, triggering a boss-scale explosion
+          and a single persistent acquisition. Open it at HomeBase to receive one weighted
+          permanent ship-stat increase.
+        </p>
+        <div class="cacheRewards">
+          <span>Accuracy</span><span>Damage Bonus</span><span>Critical Chance</span>
+          <span>Critical Damage</span><span>Projectile Speed</span><span>Fire Rate</span>
+          <span>Shield Capacity</span><span>Shield Recharge</span><span>Movement Speed</span>
+          <span>Magnet Range</span><span>WizzCoin Bonus</span><span>Salvage Bonus</span>
+        </div>
       </div>
     </section>
 
@@ -264,10 +290,12 @@
       <div class="shots">
         <div class="shot">
           <img src="/assets/images/25th_m16.jpg" alt="Gameplay screenshot 1" loading="lazy" />
+          <span class="shotCaption">High-speed combat and boss encounters</span>
         </div>
 
         <div class="shot">
           <img src="/assets/images/homebase_ankh_chamber.png" alt="Gameplay screenshot 2" loading="lazy" />
+          <span class="shotCaption">HomeBase — Ankh Chamber</span>
         </div>
 
         <div class="shot">
@@ -283,25 +311,31 @@
             <source src="http://192.168.1.204/media/blackhole.mp4" type="video/mp4" />
             Your browser does not support HTML5 video.
           </video>
+          <span class="shotCaption">Black-hole campaign transition</span>
         </div>
       </div>
-
-      <p style="margin:10px 0 0; color: var(--muted); font-size: 12px;">
-        Tip: put images in <b>/public</b> and replace these placeholders with &lt;img src="/screenshot_1.png"&gt;.
-      </p>
     </section>
 
 
     <section class="card bossShowcase" id="bosses">
 
       <div class="economyIntro">
-        <span class="featureEyebrow">Boss Families</span>
-        <h3>Every boss is designed to be remembered.</h3>
+        <span class="featureEyebrow">Command Ships • Escorts • The Void</span>
+        <h3>A campaign built around escalating boss encounters.</h3>
 
         <p>
-          Learn attack patterns, survive bullet hell, dodge massive beam weapons and
-          overcome unique mechanics. New boss families continue to arrive throughout Alpha.
+          Battle Scorpion and the Gemini Warship in the intro, survive the four Drax command ships,
+          face Gemini Rift’s five-boss sequence, break the Shattered Armada and its escorts, then
+          endure sustained pressure until the Void Frontier boss arrives.
         </p>
+      </div>
+
+      <div class="featurePoints bossRoutes">
+        <div><b>Intro Battle</b><span>Scorpion and the Gemini Warship lead into the black-hole transition.</span></div>
+        <div><b>Scarab Nebula — Drax Gauntlet</b><span>Four command ships: Aries, Cancer, Taurus and Sagittarius.</span></div>
+        <div><b>Gemini Rift</b><span>Cancer Dreadnought, Drax Fighter Ace, Leo Siege Cruiser, Scorpion Assault Carrier and Virgo Flagship.</span></div>
+        <div><b>Shattered Armada</b><span>A large Armada boss with four escort mini-bosses, formation behaviour, predictive aiming and staggered bursts.</span></div>
+        <div><b>The Void Frontier</b><span>Survive sustained enemy pressure until the timed Void Boss arrival.</span></div>
       </div>
 
       <div class="bossGallery">
@@ -311,48 +345,51 @@
         <img src="http://192.168.1.204/media/bosses/lvl2bossreplacement.png" alt="Level 2 Boss" loading="lazy">
         <img src="http://192.168.1.204/media/bosses/lvl5bosses.png" alt="Level 5 Bosses" loading="lazy">
         <img src="http://192.168.1.204/media/bosses/oldCANCER12.png" alt="Cancer Prime" loading="lazy">
-        <img src="http://192.168.1.204/media/bosses/oldCANCER2.png" alt="Cancer Siegecraft" loading="lazy">
-        <img src="http://192.168.1.204/media/bosses/oldFIGHTER2.png" alt="Drax Fighter" loading="lazy">
-        <img src="http://192.168.1.204/media/bosses/oldSCORPIO12.png" alt="Scorpio War Machine" loading="lazy">
+        <img src="/assets/boss/oldCANCER2.png" alt="Cancer Siegecraft" loading="lazy">
+        <img src="/assets/boss/fighterspr1.png" alt="Drax Fighter" loading="lazy">
+        <img src="/assets/boss/oldSCORPIO2.png" alt="Scorpio War Machine" loading="lazy">
         <img src="http://192.168.1.204/media/bosses/oldVIRGO12.png" alt="Virgo Vanguard" loading="lazy">
         <img src="http://192.168.1.204/media/bosses/void_boss_lvl5.png" alt="Void Boss" loading="lazy">
 
       </div>
 
       <p class="bossDesc">
-        Click any boss to view it full size. Replace these placeholders later with your best captures.
+        Click any boss to inspect the encounter art at full size.
       </p>
 
     </section>
 
     <section class="alphaUpdate" id="alpha-update">
       <div class="alphaUpdateHead">
-        <span class="updateEyebrow">Space Junkz Shooter • Alpha Update</span>
-        <h3>A bigger universe. A stronger game.</h3>
+        <span class="updateEyebrow">Space Junkz • Development Update</span>
+        <h3>Four missions live. The Void route is expanding.</h3>
         <p>
-          Space Junkz Shooter has taken a major step forward with new progression systems,
-          improved combat, expanded missions and a large performance overhaul.
+          The current build connects a cinematic opening, World Map campaign, persistent
+          HomeBase progression and four distinct missions in one continuous journey.
         </p>
       </div>
 
       <article class="updateHero alphaNow">
         <div class="updateCopy">
           <span class="updateLabel">Playable Now</span>
-          <h4>Five missions. One expanding war.</h4>
+          <h4>The current campaign is ready to fight.</h4>
           <p>
-            Fight through an expanding mission map, survive enemy formations and face
-            multiple boss encounters while building a permanently stronger combat ship.
+            Play the cinematic intro, cross the black hole and advance through Scarab Nebula,
+            Gemini Rift, Shattered Armada and The Void Frontier.
           </p>
 
           <div class="updatePoints">
-            <span>🏠 Home Base</span>
-            <span>🔨 Crafting</span>
-            <span>💰 WizzCoin Economy</span>
-            <span>♻️ Salvage</span>
-            <span>🚀 Weapon Evolution</span>
-            <span>👑 Boss Battles</span>
-            <span>🏆 Leaderboards</span>
-            <span>📈 XP Progression</span>
+            <span>🎬 Cinematic Intro</span>
+            <span>🗺️ World Map</span>
+            <span>🏠 HomeBase</span>
+            <span>🚀 Four Campaign Missions</span>
+            <span>👑 10+ Boss Encounters</span>
+            <span>💾 Persistent Local Profile</span>
+            <span>📈 Permanent Upgrades</span>
+            <span>🤖 Sidekicks + Rockets</span>
+            <span>💎 Legendary Caches</span>
+            <span>🎮 Desktop + Mobile</span>
+            <span>🏆 Optional Online Leaderboards</span>
           </div>
         </div>
 
@@ -362,65 +399,64 @@
             <span>FULLY PLAYABLE</span>
           </div>
 
-          <div class="statOrbit statOne"><b>5</b><span>MISSIONS</span></div>
-          <div class="statOrbit statTwo"><b>10+</b><span>BOSSES</span></div>
-          <div class="statOrbit statThree"><b>7</b><span>UPGRADE TIERS</span></div>
+          <div class="statOrbit statOne"><b>4</b><span>MISSIONS</span></div>
+          <div class="statOrbit statTwo"><b>10+</b><span>BOSS ENCOUNTERS</span></div>
+          <div class="statOrbit statThree"><b>3</b><span>ACTIVE UPGRADES</span></div>
         </div>
       </article>
 
       <article class="updateHero performanceHero">
         <div class="updateVisual performanceVisual" aria-label="Performance improvements">
           <div class="performanceGauge">
-            <span>OPTIMISED</span>
-            <strong>60</strong>
-            <small>FPS TARGET</small>
+            <span>CANVAS</span>
+            <strong>120</strong>
+            <small>HZ SUPPORT</small>
           </div>
 
           <div class="performanceLines">
-            <span style="--level:92%">Frame stability</span>
-            <span style="--level:86%">Battle rendering</span>
-            <span style="--level:89%">Enemy spawning</span>
-            <span style="--level:94%">Mobile interface</span>
+            <span style="--level:92%">High-refresh rendering</span>
+            <span style="--level:86%">Entity-heavy missions</span>
+            <span style="--level:89%">Boss and escort AI</span>
+            <span style="--level:94%">Desktop and mobile</span>
           </div>
         </div>
 
         <div class="updateCopy">
-          <span class="updateLabel">Built for Bigger Battles</span>
-          <h4>Smoother combat when space gets chaotic.</h4>
+          <span class="updateLabel">In Development</span>
+          <h4>The frontier is still being refined.</h4>
           <p>
-            A large optimisation pass reduces rendering load, controls memory use and
-            keeps battles responsive when the screen fills with enemies, trails and effects.
+            Canvas rendering supports displays up to 120 Hz. Entity-heavy missions remain
+            under active optimisation as the campaign grows more demanding.
           </p>
 
           <div class="updateList">
-            <span>⚡ Improved frame stability</span>
-            <span>👾 Optimised enemy spawning</span>
-            <span>💥 Lighter trail and explosion effects</span>
-            <span>🎯 Twin-stick mobile aiming</span>
-            <span>🎮 Improved gamepad support</span>
-            <span>📱 Cleaner mobile HUD</span>
+            <span>🌀 Void-route expansion</span>
+            <span>🏠 More HomeBase upgrade branches</span>
+            <span>💎 Legendary reward presentation</span>
+            <span>⚖️ Mission balance and result-screen polish</span>
+            <span>📱 Mobile control refinement</span>
+            <span>⚡ Performance optimisation</span>
+            <span>🎯 New objectives and environmental hazards</span>
           </div>
         </div>
       </article>
 
       <article class="updateHero futureHero">
         <div class="updateCopy">
-          <span class="updateLabel">The Universe Is Expanding</span>
-          <h4>The Alpha is only the beginning.</h4>
+          <span class="updateLabel">Long-Term Direction</span>
+          <h4>More ways to fly, fight and compete.</h4>
           <p>
-            New worlds will bring harder missions, legendary technology, rare loot and
-            boss classes built to push every combat system further.
+            The architecture is being prepared for a broader campaign, deeper ship systems
+            and connected competitive features.
           </p>
 
           <div class="updatePoints futurePoints">
-            <span>🌍 Missions 6–10</span>
-            <span>⭐ Legendary Weapons</span>
-            <span>💎 Rare Loot</span>
-            <span>✈️ Airstrikes</span>
-            <span>👑 New Boss Classes</span>
-            <span>🏠 Home Base Expansion</span>
-            <span>⚔️ Multiplayer Testing</span>
-            <span>🎉 Community Events</span>
+            <span>🌍 More Handcrafted Missions</span>
+            <span>🚀 New Ships and Weapon Classes</span>
+            <span>🧰 Deeper Crafting and Inventory</span>
+            <span>🏆 Mission-Specific Leaderboards</span>
+            <span>👻 Ghost Activity and Presence</span>
+            <span>⚔️ Multiplayer-Ready Systems</span>
           </div>
         </div>
 
@@ -428,52 +464,60 @@
           <span class="mapPath"></span>
 
           <div class="mapNode activeNode">
-            <b>05</b>
-            <small>ALPHA FRONTIER</small>
+            <b>04</b>
+            <small>VOID FRONTIER</small>
           </div>
 
           <div class="mapNode nextNode">
-            <b>06</b>
-            <small>NEXT MISSION</small>
+            <b>?</b>
+            <small>UNSTABLE ROUTE</small>
           </div>
 
           <div class="mapNode lockedNode">
-            <b>10</b>
-            <small>UNKNOWN WORLD</small>
+            <b>∞</b>
+            <small>DEEP SPACE</small>
           </div>
         </div>
       </article>
 
       <div class="alphaStatus">
         <b>CURRENT ALPHA</b>
-        <span>5 MISSIONS</span>
-        <span>BOSS BATTLES</span>
-        <span>CRAFTING</span>
-        <span>ECONOMY</span>
-        <span>HOME BASE</span>
-        <span>LEADERBOARDS</span>
-        <span>MOBILE</span>
-        <span>CONTROLLER</span>
+        <span>4 MISSIONS</span>
+        <span>10+ BOSS ENCOUNTERS</span>
+        <span>WORLD MAP</span>
+        <span>HOMEBASE</span>
+        <span>LEGENDARY CACHES</span>
+        <span>LOCAL PROFILE</span>
+        <span>DESKTOP + MOBILE</span>
+        <span>UP TO 120 HZ</span>
       </div>
     </section>
 
     <section class="card" id="waitlist">
-      <h3 class="secTitle">Join the Waitlist</h3>
+      <h3 class="secTitle">Follow the Development</h3>
 
-      <div class="waitlist">
-        <form id="waitlistForm">
-          <input id="email" type="email" placeholder="Your email" autocomplete="email" required />
-          <button class="btn btnPrimary" type="submit">Subscribe</button>
-        </form>
-
-        <p style="margin:10px 0 0; color: var(--muted); font-size: 12px;">
-          This is front-end only right now (stores nothing). If you want, I’ll wire it to your backend later.
-        </p>
+      <div class="waitlist projectCta">
+        <p>Play the current build, inspect the source or return as new missions, upgrades and Void-route content are added.</p>
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="https://space-junkz-shooter.vercel.app/game.html" target="_blank" rel="noopener">Play Current Build</a>
+          <a class="btn btnGhost" href="https://github.com/999nike/space-junkz-shooter" target="_blank" rel="noopener">View GitHub</a>
+        </div>
       </div>
     </section>
 
-    <footer>
-      © <span id="year"></span> Junkz Shooter. All rights reserved.
+    <footer id="footer">
+      <div class="footerIdentity">
+        <b>Space Junkz</b>
+        <span>Created and directed by DevMaster / 999nike</span>
+        <span>W.I.Z.Z. LAB STUDIOS</span>
+        <span>Built from scratch with HTML5 Canvas and vanilla JavaScript.</span>
+      </div>
+      <div class="footerLinks">
+        <a href="https://space-junkz-shooter.vercel.app/game.html" target="_blank" rel="noopener">Play</a>
+        <a href="https://github.com/999nike/space-junkz-shooter" target="_blank" rel="noopener">GitHub</a>
+        <a href="#">Back to top</a>
+      </div>
+      <p>© <span id="year"></span> Space Junkz. All rights reserved.</p>
     </footer>
   </div>
 
@@ -522,14 +566,6 @@
       if (e.target === modal) closeModal();
     });
 
-    // Waitlist placeholder (no backend yet)
-    document.getElementById("waitlistForm").addEventListener("submit", (e) => {
-      e.preventDefault();
-      const email = document.getElementById("email").value.trim();
-      if (!email) return;
-      alert("Saved locally (demo): " + email);
-      document.getElementById("email").value = "";
-    });
   </script>
 
 
@@ -586,11 +622,6 @@ document.addEventListener("keydown",(e)=>{
 
 <script src="wizzCubeEmbed.js" defer></script>
   
-<!-- Eruda Mobile Console -->
-<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-<script>
-  eruda.init();
-</script>
 <!-- WIZZ EMBED (requires THREE globals) -->
 <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r146/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r146/examples/js/loaders/GLTFLoader.js"></script>
