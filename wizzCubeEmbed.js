@@ -5,8 +5,18 @@
 // ===============================
 
 (function () {
+  const inMetaAppBrowser = /(?:FBAN|FBAV|FB_IAB|Messenger)/i.test(navigator.userAgent || "");
+  document.documentElement.classList.toggle("meta-in-app-browser", inMetaAppBrowser);
+
   // ---------- CONFIG ----------
   const cfg = window.WIZZ_CUBE || {};
+
+  if (inMetaAppBrowser) {
+    if (cfg.mountId) {
+      document.getElementById(cfg.mountId)?.classList.add("wizzCubeContainer");
+    }
+    return;
+  }
 
   const mountId = cfg.mountId || null;
 
@@ -49,6 +59,7 @@
       mount.style.width = "260px";
       mount.style.height = "260px";
       mount.style.zIndex = "50";
+      mount.classList.add("wizzCubeContainer");
       document.body.appendChild(mount);
     }
 
