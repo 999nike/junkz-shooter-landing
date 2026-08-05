@@ -230,35 +230,108 @@ nav a:hover{
   border-radius: 999px;
 }
 
-/* --------- HERO GAMEPLAY MEDIA --------- */
-.heroMedia{
-  position: relative;
-  border-radius: 16px;
+/* --------- HERO BATTLE ARTWORK --------- */
+.heroFeature{
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(91,231,255,0.28);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(5,13,30,0.98), rgba(17,8,33,0.96));
+  box-shadow:
+    inset 0 1px 0 rgba(91,231,255,0.18),
+    inset -1px -1px 0 rgba(190,92,255,0.16);
 }
 
-.heroMedia img{
+.heroMedia{
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #020611;
+}
+
+.heroArtwork{
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
+  object-position: center;
+  transition: transform 180ms ease;
 }
 
-.heroMediaLabel{
+.studioBadge{
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  top: 10px;
+  right: 10px;
+  width: clamp(72px, 7vw, 92px);
+  aspect-ratio: 1;
+  padding: 5px;
+  border-radius: 12px;
+  background: rgba(2,7,19,0.82);
+  border: 1px solid rgba(91,231,255,0.6);
+  box-shadow: 0 0 16px rgba(91,231,255,0.18);
+}
+
+.studioBadge img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.heroCaption{
+  padding: 14px 15px 15px;
+  border-top: 1px solid rgba(190,92,255,0.22);
+}
+
+.heroCaptionKicker{
+  color: var(--a1);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  padding: 6px 10px;
+}
+
+.heroCaption h3{
+  margin: 6px 0;
+  font-size: clamp(17px, 1.8vw, 22px);
+  line-height: 1.2;
+}
+
+.heroCaption p{
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.heroTags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 11px;
+}
+
+.heroTags span{
+  padding: 5px 8px;
+  border: 1px solid rgba(91,231,255,0.22);
   border-radius: 999px;
-  background: rgba(0,0,0,0.55);
-  border: 1px solid rgba(255,255,255,0.18);
-  color: var(--text);
-  backdrop-filter: blur(6px);
+  background: rgba(91,231,255,0.06);
+  color: #c9f8ff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+@media (hover: hover) and (pointer: fine){
+  .heroFeature:hover .heroArtwork{
+    transform: scale(1.01);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .heroArtwork{
+    transition: none;
+  }
 }
 
 .heroSide{
@@ -618,6 +691,17 @@ video{
 
   .statGrid{
     grid-template-columns:repeat(2,1fr);
+  }
+
+  .studioBadge{
+    width: clamp(54px, 16vw, 68px);
+    top: 8px;
+    right: 8px;
+    padding: 4px;
+  }
+
+  .heroCaption{
+    padding: 13px;
   }
 
 }
