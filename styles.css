@@ -146,6 +146,10 @@ nav a:hover{
   cursor:pointer;
 }
 
+.wizzAssistantLauncher{
+  display:none;
+}
+
 .hero{
   display:grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -737,6 +741,144 @@ video{
     padding: 13px;
   }
 
+}
+
+/* Facebook/Instagram webview-safe mobile composition. */
+@media (max-width:767px){
+  html, body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  html.display-scale-manual body{
+    zoom:1;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:100%;
+    padding:16px 12px 48px;
+  }
+
+  header{
+    width:100%;
+    align-items:stretch;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .brand{
+    min-width:0;
+    width:100%;
+  }
+
+  nav{
+    width:100%;
+    justify-content:flex-start;
+    align-items:stretch;
+    gap:6px;
+  }
+
+  nav a,
+  .displayScaleControl{
+    flex:1 1 auto;
+    min-width:0;
+    justify-content:center;
+    white-space:nowrap;
+  }
+
+  .displayScaleControl{
+    flex-basis:100%;
+  }
+
+  .displayScaleControl select{
+    flex:1;
+    min-width:0;
+  }
+
+  .hero,
+  .wrap > .card,
+  .wrap > section.card,
+  footer{
+    width:100%;
+    max-width:100%;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    margin-top:12px;
+    gap:12px;
+  }
+
+  .heroMain,
+  .heroSide,
+  .card{
+    min-width:0;
+  }
+
+  .title{
+    font-size:clamp(28px, 9vw, 42px);
+  }
+
+  .heroMain .ctaRow .btn{
+    max-width:100%;
+  }
+
+  .wizzAssistantAvatar{
+    width:72px !important;
+    height:98px !important;
+    right:12px !important;
+    bottom:calc(58px + env(safe-area-inset-bottom)) !important;
+    overflow:hidden;
+    border-radius:18px;
+    pointer-events:none;
+  }
+
+  .wizzAssistantAvatar canvas{
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain;
+  }
+
+  .wizzAssistantLauncher{
+    display:block;
+    position:fixed;
+    right:12px;
+    bottom:calc(12px + env(safe-area-inset-bottom));
+    width:48px;
+    height:48px;
+    padding:0;
+    border:1px solid var(--a1);
+    border-radius:50%;
+    background:linear-gradient(135deg, #07172f, #30134b);
+    box-shadow:0 8px 24px rgba(0,0,0,0.45), 0 0 16px rgba(91,231,255,0.28);
+    color:var(--text);
+    font-size:18px;
+    font-weight:900;
+    z-index:10001;
+  }
+
+  .wizzChatPanel{
+    display:none !important;
+  }
+
+  body.wizz-chat-open .wizzChatPanel{
+    display:block !important;
+  }
+
+  .wizzChatPanel > div{
+    right:12px !important;
+    bottom:calc(72px + env(safe-area-inset-bottom)) !important;
+    width:min(360px, calc(100vw - 24px)) !important;
+    max-width:calc(100vw - 24px);
+  }
+
+  .wizzChatPanel input{
+    width:calc(100% - 58px) !important;
+    max-width:none;
+    min-width:0;
+  }
 }
 
 

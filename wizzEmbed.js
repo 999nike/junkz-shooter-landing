@@ -7,6 +7,7 @@ const apiURL = "https://cloud-w-i-z-z.vercel.app/api/wizz";
 
 // === Create Container ===
 const container = document.createElement("div");
+container.className = "wizzAssistantAvatar";
 container.style.cssText = `
   position: fixed;
   bottom: 20px;
@@ -70,6 +71,7 @@ function playAnim(file) {
 
 // === Chat UI (bottom bar) ===
 const chatBox = document.createElement("div");
+chatBox.className = "wizzChatPanel";
 chatBox.innerHTML = `
   <div style="position:fixed;
               bottom:20px;
@@ -88,6 +90,16 @@ chatBox.innerHTML = `
                    padding:4px 10px;border-radius:6px;">Send</button>
   </div>`;
 document.body.appendChild(chatBox);
+
+const wizzLauncher = document.createElement("button");
+wizzLauncher.className = "wizzAssistantLauncher";
+wizzLauncher.type = "button";
+wizzLauncher.setAttribute("aria-label", "Open Wizz assistant");
+wizzLauncher.textContent = "W";
+wizzLauncher.addEventListener("click", () => {
+  document.body.classList.toggle("wizz-chat-open");
+});
+document.body.appendChild(wizzLauncher);
 
 // === Reply Bubble ===
 const replyBubble = document.createElement("div");

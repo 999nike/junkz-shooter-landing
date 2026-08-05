@@ -11,9 +11,13 @@
   } catch (_) {}
 
   function applyScale() {
-    const manual = selected !== "auto";
+    const mobileViewport = window.matchMedia("(max-width: 767px)").matches || window.innerWidth < 768;
+    const effectiveScale = mobileViewport ? 1 : (SCALE_VALUES[selected] || 1);
+    const manual = !mobileViewport && selected !== "auto";
     document.documentElement.classList.toggle("display-scale-manual", manual);
-    document.documentElement.style.setProperty("--display-scale", String(SCALE_VALUES[selected] || 1));
+    document.documentElement.style.setProperty("--display-scale", String(effectiveScale));
+    const select = document.getElementById("displayScale");
+    if (select && mobileViewport) select.value = "auto";
   }
 
   function setScale(value) {
@@ -28,7 +32,7 @@
   window.addEventListener("DOMContentLoaded", () => {
     const select = document.getElementById("displayScale");
     if (!select) return;
-    select.value = selected;
+    select.value = window.matchMedia("(max-width: 767px)").matches ? "auto" : selected;
     select.addEventListener("change", () => {
       select.value = setScale(select.value);
     });
