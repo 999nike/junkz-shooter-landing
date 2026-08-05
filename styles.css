@@ -150,6 +150,87 @@ nav a:hover{
   display:none;
 }
 
+.externalGameModal{
+  position:fixed;
+  inset:0;
+  z-index:10020;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  background:rgba(1,4,14,0.82);
+}
+
+.externalGameModal[hidden]{
+  display:none;
+}
+
+.externalGameCard{
+  position:relative;
+  width:min(520px, calc(100vw - 24px));
+  padding:28px;
+  border:1px solid rgba(91,231,255,0.48);
+  border-radius:18px;
+  background:linear-gradient(145deg, rgba(6,16,38,0.98), rgba(28,9,45,0.98));
+  box-shadow:0 30px 90px rgba(0,0,0,0.65), 0 0 28px rgba(91,231,255,0.16);
+}
+
+.externalGameClose{
+  position:absolute;
+  top:10px;
+  right:12px;
+  width:36px;
+  height:36px;
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:10px;
+  background:rgba(0,0,0,0.24);
+  color:var(--text);
+  font-size:24px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.externalGameKicker{
+  color:var(--a1);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:0.16em;
+}
+
+.externalGameCard h2{
+  margin:10px 40px 10px 0;
+  font-size:clamp(22px, 4vw, 32px);
+  line-height:1.1;
+}
+
+.externalGameCard p{
+  color:var(--muted);
+  line-height:1.5;
+}
+
+.externalGameActions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+
+.externalGameActions .btn{
+  flex:1 1 190px;
+}
+
+.externalGameHint{
+  margin:16px 0 0;
+  font-size:12px;
+}
+
+.externalGameStatus{
+  min-height:18px;
+  margin:8px 0 0;
+  color:var(--a1) !important;
+  font-size:12px;
+}
+
 html.meta-in-app-browser .wizzCubeContainer{
   display:none !important;
 }

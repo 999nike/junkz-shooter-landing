@@ -5,8 +5,8 @@
   <title>Space Junkz Shooter — Fight. Salvage. Upgrade. Survive.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="A progression-driven arcade space shooter featuring handcrafted missions, ship upgrades and massive multi-stage bosses." />
-  <link rel="stylesheet" href="/styles.css?v=alpha-update-4" />
-  <script src="/app.js?v=3" defer></script>
+  <link rel="stylesheet" href="/styles.css?v=alpha-update-5" />
+  <script src="/app.js?v=4" defer></script>
 </head>
 
 <body>
@@ -563,6 +563,21 @@
         <!-- IMPORTANT: set trailer path here -->
         <source src="./src/game/assets/trailer.mp4" type="video/mp4" />
       </video>
+    </div>
+  </div>
+
+  <div class="externalGameModal" id="externalGameModal" role="dialog" aria-modal="true" aria-labelledby="externalGameTitle" aria-describedby="externalGameCopy" hidden>
+    <div class="externalGameCard">
+      <button class="externalGameClose" id="externalGameClose" type="button" aria-label="Close">×</button>
+      <span class="externalGameKicker">SPACE JUNKZ</span>
+      <h2 id="externalGameTitle">SPACE JUNKZ PLAYS BEST IN CHROME</h2>
+      <p id="externalGameCopy">Facebook's built-in browser cannot provide the correct game viewport and controls.</p>
+      <div class="externalGameActions">
+        <button class="btn btnPrimary" id="openGameChrome" type="button">OPEN GAME IN CHROME</button>
+        <button class="btn btnGhost" id="copyGameLink" type="button">COPY GAME LINK</button>
+      </div>
+      <p class="externalGameHint">If Chrome does not open, tap Facebook's ⋮ menu and choose Open in external browser.</p>
+      <p class="externalGameStatus" id="externalGameStatus" aria-live="polite"></p>
     </div>
   </div>
 
