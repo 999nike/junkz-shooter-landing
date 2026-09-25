@@ -1,10 +1,9 @@
 import * as THREE from "../../vendor/three-r160.module.min.js";
 import { GLTFLoader } from "../../vendor/GLTFLoader-r160.js";
 import { createScorpionWeaponFX, WEAPON_TIMING } from "./scorpion-weapon-fx.js?v=cmd-bossfx-1";
-import { createSpaceBattleAudio } from "./battle-audio.js?v=junkz-audio-2";
 
 const LOOP_SECONDS = 12;
-export const SPACE_BATTLE_BUILD = "cmd-full-visual-1";
+export const SPACE_BATTLE_BUILD = "landing-reskin-visual-1";
 const MODEL_URLS = {
   player: new URL("https://cdn.jsdelivr.net/gh/999nike/Smokey-Space@d8fb57f840582e8e322f0057f90a5b56311a9ed3/assets/space-battle/web/Twinflare_Valkyrie_web.glb"),
   boss: new URL("https://cdn.jsdelivr.net/gh/999nike/Smokey-Space@d8fb57f840582e8e322f0057f90a5b56311a9ed3/assets/space-battle/web/Neon_Scorpion_web.glb")
@@ -508,8 +507,7 @@ function disposeObject(root) {
  */
 export async function createSpaceBattle({
   container,
-  visualMode = "full",
-  enableAudio = true
+  visualMode = "full"
 }) {
   if (!(container instanceof HTMLElement)) throw new Error("A battle container element is required.");
 
@@ -644,14 +642,6 @@ export async function createSpaceBattle({
   const bossWeapon = createScorpionWeaponFX(scene, hotTexture, lowQuality, {
     mode: bossFxEnabled ? "full" : "beam-only"
   });
-  const battleAudio = combatEnabled && enableAudio
-    ? createSpaceBattleAudio({
-        playerShotTimes: PLAYER_SHOTS,
-        impactTimes: IMPACT_TIMES,
-        bossFireTime: WEAPON_TIMING.fire,
-        loopSeconds: LOOP_SECONDS
-      })
-    : null;
   const bossAura = additiveSprite(glowTexture, 0x08aeea, 1.35);
   bossAura.material.opacity = .22;
   boss.bankingRoot.add(bossAura);
@@ -915,7 +905,6 @@ export async function createSpaceBattle({
       trail.forEach((sprite) => { sprite.visible = false; });
     }
 
-    if (combatEnabled) battleAudio?.update(time);
 
     const edgeFade = Math.min(clamp01(time / .22), clamp01((LOOP_SECONDS - time) / .28));
     player.pathRoot.visible = edgeFade > .01;
@@ -983,7 +972,6 @@ export async function createSpaceBattle({
     resizeObserver.disconnect();
     document.removeEventListener("visibilitychange", handleVisibility);
     reducedMotionQuery.removeEventListener("change", handleMotionPreference);
-    battleAudio?.dispose();
     disposeObject(scene);
     renderer.dispose();
     renderer.domElement.remove();
