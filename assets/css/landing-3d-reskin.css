@@ -78,11 +78,13 @@
   position:absolute;
   inset:0;
   z-index:1;
+  pointer-events:none;
 }
 .reskinBattle canvas{
   display:block;
   width:100% !important;
   height:100% !important;
+  pointer-events:none;
 }
 .reskinStageHud{
   position:absolute;
