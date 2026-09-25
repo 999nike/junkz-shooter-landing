@@ -3,10 +3,10 @@ import { GLTFLoader } from "../../vendor/GLTFLoader-r160.js";
 import { createScorpionWeaponFX, WEAPON_TIMING } from "./scorpion-weapon-fx.js?v=cmd-bossfx-1";
 
 const LOOP_SECONDS = 12;
-export const SPACE_BATTLE_BUILD = "landing-reskin-visual-1";
+export const SPACE_BATTLE_BUILD = "landing-reskin-visual-2";
 const MODEL_URLS = {
-  player: new URL("https://cdn.jsdelivr.net/gh/999nike/Smokey-Space@d8fb57f840582e8e322f0057f90a5b56311a9ed3/assets/space-battle/web/Twinflare_Valkyrie_web.glb"),
-  boss: new URL("https://cdn.jsdelivr.net/gh/999nike/Smokey-Space@d8fb57f840582e8e322f0057f90a5b56311a9ed3/assets/space-battle/web/Neon_Scorpion_web.glb")
+  player: new URL("https://smokey-space.vercel.app/assets/space-battle/web/Twinflare_Valkyrie_web.glb"),
+  boss: new URL("https://smokey-space.vercel.app/assets/space-battle/web/Neon_Scorpion_web.glb")
 };
 
 const PLAYER_SHOTS = [2.35, 2.68, 3.02, 9.25, 9.56, 9.87];
