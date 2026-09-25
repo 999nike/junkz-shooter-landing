@@ -1581,6 +1581,75 @@ color:#6df7ff;
 }
 
 
+/* ---------- SIMPLE 3D RESKIN PREVIEW ---------- */
+.threeDReskinHero{
+  min-height:0;
+}
+
+.glbPreviewVisual{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  min-height:320px;
+  padding:14px;
+}
+
+.glbPreviewCard{
+  display:grid;
+  grid-template-rows:minmax(0,1fr) auto;
+  min-width:0;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+  background:
+    radial-gradient(circle at 50% 42%,rgba(91,231,255,.10),transparent 42%),
+    rgba(0,0,0,.18);
+}
+
+.glbPreviewCard b{
+  padding:10px 8px 12px;
+  color:rgba(232,246,255,.84);
+  font-size:9px;
+  letter-spacing:.13em;
+  text-align:center;
+}
+
+.glbSpinViewer{
+  position:relative;
+  min-height:250px;
+  overflow:hidden;
+}
+
+.glbSpinViewer canvas{
+  display:block;
+  width:100% !important;
+  height:100% !important;
+}
+
+.glbSpinViewer > span{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:rgba(232,246,255,.45);
+  font-size:9px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+@media(max-width:560px){
+  .glbPreviewVisual{
+    grid-template-columns:1fr 1fr;
+    min-height:260px;
+    padding:9px;
+    gap:8px;
+  }
+
+  .glbSpinViewer{
+    min-height:210px;
+  }
+}
+
 /* ---------- ALPHA UPDATE HEROES ---------- */
 
 .alphaUpdate{
