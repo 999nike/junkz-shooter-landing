@@ -12,7 +12,7 @@ async function bootBattle() {
   if (status) status.textContent = "3D PREVIEW • LOADING MODELS";
 
   try {
-    const { createSpaceBattle } = await import("./battle-scene.js?v=landing-reskin-visual-1");
+    const { createSpaceBattle } = await import("./battle-scene.js?v=landing-reskin-visual-2");
     if (disposed) return;
 
     controller = await createSpaceBattle({
