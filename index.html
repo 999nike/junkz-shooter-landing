@@ -14,7 +14,7 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Space Junkz Shooter gameplay artwork" />
-  <link rel="stylesheet" href="/styles.css?v=alpha-update-7" />
+  <link rel="stylesheet" href="/styles.css?v=alpha-update-8" />
   <script src="/app.js?v=4" defer></script>
 </head>
 
@@ -54,11 +54,14 @@
     <div class="hero">
       <div class="card heroMain">
         <div class="kicker"><span class="dot"></span><span>Active Development Build</span></div>
+        <div class="heroGameLogoWrap">
+          <img class="heroGameLogo" src="https://cdn.jsdelivr.net/gh/999nike/space-junkz-shooter@ec70f1e52e4c4419050e8253a7a059bd8ce71859/src/game/assets/menu/space-junkz-title.png" alt="Space Junkz graffiti title logo" width="1949" height="807" decoding="async" fetchpriority="high" />
+        </div>
         <h2 class="title">Fight. Salvage.<br/>Upgrade. Survive.</h2>
 
         <p class="sub">
-          Space Junkz is a fast, progression-driven arcade space shooter built from scratch with HTML5 Canvas
-          and vanilla JavaScript. Fight through handcrafted missions, destroy multi-stage bosses, recover
+          Space Junkz is a progression-driven indie space shooter built from scratch with HTML5 Canvas,
+          Three.js and vanilla JavaScript. Fight through handcrafted missions, destroy 3D bosses, recover
           WizzCoins and Salvage, unlock stronger weapons, hunt Rare Contacts, secure powerful caches and push deeper into hostile space.
         </p>
 
@@ -81,7 +84,8 @@
         </p>
 
         <div class="mini">
-          <div class="pill">4 Playable Missions</div>
+          <div class="pill">7 Campaign Missions</div>
+          <div class="pill">M6 + M7 Full 3D Flight</div>
           <div class="pill">World Map Campaign</div>
           <div class="pill">HomeBase Progression</div>
           <div class="pill">Rare + Legendary Caches</div>
@@ -386,30 +390,31 @@
     <section class="alphaUpdate" id="alpha-update">
       <div class="alphaUpdateHead">
         <span class="updateEyebrow">Space Junkz • Development Update</span>
-        <h3>Four missions live. The Void route is expanding.</h3>
+        <h3>Seven missions. A new era of 3D combat.</h3>
         <p>
-          The current build connects a cinematic opening, World Map campaign, persistent
-          HomeBase progression and four distinct missions in one continuous journey.
+          From the cinematic opening and solar-system map to an interactive 3D HomeBase,
+          the campaign now spans seven missions, including two full-3D flight experiences.
         </p>
       </div>
 
       <article class="updateHero alphaNow">
         <div class="updateCopy">
           <span class="updateLabel">Playable Now</span>
-          <h4>The current campaign is ready to fight.</h4>
+          <h4>Arcade combat meets full 3D spaceflight.</h4>
           <p>
-            Play the cinematic intro, cross the black hole and advance through Scarab Nebula,
-            Gemini Rift, Shattered Armada and The Void Frontier.
+            Fight through Scarab Nebula, Gemini Rift, Shattered Armada and the Void route,
+            then fly Mission 6: Rift Run and explore the open 3D sector of Mission 7: Veil Reach.
           </p>
 
           <div class="updatePoints">
             <span>🎬 Cinematic Intro</span>
             <span>🗺️ World Map</span>
-            <span>🏠 HomeBase</span>
-            <span>🚀 Four Campaign Missions</span>
-            <span>👑 10+ Boss Encounters</span>
+            <span>🏠 Interactive 3D HomeBase</span>
+            <span>🚀 Seven Campaign Missions</span>
+            <span>🌌 M6 + M7 Full 3D Flight</span>
+            <span>👑 New Boss Encounters</span>
             <span>💾 Persistent Local Profile</span>
-            <span>📈 4 Live Weapon Upgrades</span>
+            <span>🔧 Ship Refits + Upgrades</span>
             <span>🤖 Sidekicks + Rockets</span>
             <span>💎 Rare + Legendary Caches</span>
             <span>🎮 Desktop + Mobile</span>
@@ -420,12 +425,12 @@
         <div class="updateVisual missionVisual" aria-label="Current alpha statistics">
           <div class="missionCore">
             <strong>ALPHA</strong>
-            <span>FULLY PLAYABLE</span>
+            <span>3D EXPANSION LIVE</span>
           </div>
 
-          <div class="statOrbit statOne"><b>4</b><span>MISSIONS</span></div>
-          <div class="statOrbit statTwo"><b>10+</b><span>BOSS ENCOUNTERS</span></div>
-          <div class="statOrbit statThree"><b>4</b><span>ACTIVE UPGRADES</span></div>
+          <div class="statOrbit statOne"><b>7</b><span>MISSIONS</span></div>
+          <div class="statOrbit statTwo"><b>40+</b><span>3D MODELS</span></div>
+          <div class="statOrbit statThree"><b>2</b><span>3D FLIGHT MODES</span></div>
         </div>
       </article>
 
@@ -438,10 +443,10 @@
           </div>
 
           <div class="performanceLines">
-            <span style="--level:100%">Level 1 combat remaster</span>
-            <span style="--level:100%">Mission-specific backgrounds</span>
-            <span style="--level:100%">Rare Contact director</span>
-            <span style="--level:100%">Crafting Obelisk progression</span>
+            <span style="--level:100%">Three.js combat presentation</span>
+            <span style="--level:100%">3D solar-system navigation</span>
+            <span style="--level:100%">Interactive HomeBase ship hangar</span>
+            <span style="--level:100%">M6 + M7 flight systems</span>
           </div>
         </div>
 
@@ -470,21 +475,22 @@
 
       <article class="updateHero futureHero threeDReskinHero">
         <div class="updateCopy">
-          <span class="updateLabel">Incoming Major Upgrade</span>
-          <h4>Space Junkz is moving into 3D.</h4>
+          <span class="updateLabel">3D Expansion Now Live</span>
+          <h4>The fleet has entered three dimensions.</h4>
           <p>
-            A Three.js visual reskin is in development. These are the actual new Twinflare Valkyrie
-            player ship and Neon Scorpion boss models.
+            Three.js now powers a new generation of Space Junkz visuals, from player ships
+            and boss encounters to the World Map, hangar and open-space flight missions.
+            Explore the Twinflare Valkyrie and Neon Scorpion models below.
           </p>
 
           <div class="updatePoints futurePoints">
-            <span>3D Player Ship</span>
-            <span>3D Bosses</span>
-            <span>Three.js Reskin</span>
+            <span>Interactive GLB Previews</span>
+            <span>Live 3D Boss Encounters</span>
+            <span>3D HomeBase + Ship Refits</span>
           </div>
         </div>
 
-        <div class="updateVisual glbPreviewVisual" aria-label="Incoming Space Junkz 3D models">
+        <div class="updateVisual glbPreviewVisual" aria-label="Space Junkz 3D ship and boss previews">
           <div class="glbPreviewCard">
             <div class="glbSpinViewer"
               data-glb-viewer
@@ -509,12 +515,13 @@
 
       <div class="alphaStatus">
         <b>CURRENT ALPHA</b>
-        <span>4 MISSIONS</span>
-        <span>10+ BOSS ENCOUNTERS</span>
-        <span>WORLD MAP</span>
-        <span>HOMEBASE</span>
-        <span>5 RARE CONTACTS</span>
-        <span>4 ACTIVE WEAPON UPGRADES</span>
+        <span>7 CAMPAIGN MISSIONS</span>
+        <span>40+ 3D MODELS</span>
+        <span>THREE.JS COMBAT</span>
+        <span>3D SOLAR MAP</span>
+        <span>3D HOMEBASE HANGAR</span>
+        <span>M6 RIFT RUN + M7 VEIL REACH</span>
+        <span>SHIP REFITS + UPGRADES</span>
         <span>RARE + LEGENDARY CACHES</span>
         <span>DESKTOP + MOBILE</span>
       </div>
@@ -537,7 +544,7 @@
         <b>Space Junkz</b>
         <span>Created and directed by DevMaster / 999nike</span>
         <span>W.I.Z.Z. LAB STUDIOS</span>
-        <span>Built from scratch with HTML5 Canvas and vanilla JavaScript.</span>
+        <span>Built from scratch with HTML5 Canvas, Three.js and vanilla JavaScript.</span>
       </div>
       <div class="footerLinks">
         <a href="https://space-junkz-shooter.vercel.app/game.html" target="_blank" rel="noopener">Play</a>

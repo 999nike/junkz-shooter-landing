@@ -2073,3 +2073,49 @@ color:#6df7ff;
     animation:none;
   }
 }
+
+/* October 2026: 3D expansion branding and alpha depth */
+.heroGameLogoWrap{
+  width:min(100%,530px);
+  margin:10px 0 2px;
+  background:radial-gradient(ellipse at 48% 56%,rgba(91,231,255,.12),transparent 72%);
+}
+.heroGameLogo{
+  display:block;
+  width:100%;
+  max-height:195px;
+  height:auto;
+  object-fit:contain;
+  object-position:left center;
+  filter:drop-shadow(0 12px 15px rgba(0,0,0,.55)) drop-shadow(0 0 16px rgba(89,187,255,.16));
+}
+.alphaNow .missionVisual{
+  isolation:isolate;
+  perspective:750px;
+  background:
+    radial-gradient(ellipse at 48% 42%,rgba(57,145,255,.22),transparent 49%),
+    radial-gradient(ellipse at 68% 77%,rgba(255,62,210,.11),transparent 50%),
+    linear-gradient(155deg,rgba(3,18,38,.96),rgba(1,5,18,.98));
+  box-shadow:inset 0 0 65px rgba(0,0,0,.65),0 18px 36px rgba(0,0,0,.17);
+}
+.alphaNow .missionVisual::before{
+  border:2px solid rgba(91,231,255,.44);
+  transform:translate(-50%,-50%) rotateX(66deg) rotate(-17deg);
+  box-shadow:0 0 25px rgba(91,231,255,.17);
+}
+.alphaNow .missionVisual::after{
+  border:2px solid rgba(255,138,212,.26);
+  transform:translate(-50%,-50%) rotateX(-54deg) rotate(19deg);
+}
+.alphaNow .missionCore{
+  z-index:1;
+  background:radial-gradient(circle at 33% 25%,rgba(99,227,255,.31),rgba(10,25,60,.95) 60%,rgba(2,5,18,.98));
+  box-shadow:0 13px 40px rgba(0,0,0,.53),0 0 45px rgba(91,231,255,.25),inset 0 0 26px rgba(91,231,255,.18);
+}
+.alphaNow .statOrbit{
+  background:linear-gradient(160deg,rgba(16,39,70,.98),rgba(3,8,26,.97));
+  box-shadow:0 12px 24px rgba(0,0,0,.4),0 0 18px rgba(255,253,139,.11);
+}
+@media(max-width:560px){
+  .heroGameLogo{max-height:146px;}
+}
