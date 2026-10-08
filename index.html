@@ -14,7 +14,7 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Space Junkz Shooter gameplay artwork" />
-  <link rel="stylesheet" href="/styles.css?v=alpha-update-8" />
+  <link rel="stylesheet" href="/styles.css?v=alpha-update-9" />
   <script src="/app.js?v=4" defer></script>
 </head>
 
@@ -490,7 +490,17 @@
           </div>
         </div>
 
-        <div class="updateVisual glbPreviewVisual" aria-label="Space Junkz 3D ship and boss previews">
+        <div class="updateVisual glbPreviewVisual battlePreviewVisual" aria-label="Animated Space Junkz battle and 3D model previews">
+          <div class="reskinStage" role="group" aria-label="Live Three.js battle: Valkyrie versus Neon Scorpion">
+            <img class="battleSceneFallback" src="/assets/images/hero_gameplay.png" alt="" loading="lazy" />
+            <div class="reskinBattle" data-landing-space-battle data-ready="false" aria-hidden="true"></div>
+            <div class="reskinStageHud">
+              <span data-battle-status>3D BATTLE • LOADING WHEN VISIBLE</span>
+              <strong>VALKYRIE VS NEON SCORPION</strong>
+            </div>
+          </div>
+
+          <div class="glbPreviewGrid">
           <div class="glbPreviewCard">
             <div class="glbSpinViewer"
               data-glb-viewer
@@ -509,6 +519,7 @@
               <span>Loading Scorpion…</span>
             </div>
             <b>NEON SCORPION</b>
+          </div>
           </div>
         </div>
       </article>
@@ -616,6 +627,7 @@ document.addEventListener("keydown",(e)=>{
 <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r146/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r146/examples/js/loaders/GLTFLoader.js"></script>
 <script src="/assets/js/landing-glb-viewers.js?v=1"></script>
+<script type="module" src="/assets/js/space-battle/landing-battle.js?v=restore-20261008"></script>
 <script src="wizzEmbed.js?v=2" defer></script>
 <!-- production-deploy: restore-boss-gallery-simple-3d -->
 </html>

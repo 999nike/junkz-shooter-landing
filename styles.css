@@ -2119,3 +2119,80 @@ color:#6df7ff;
 @media(max-width:560px){
   .heroGameLogo{max-height:146px;}
 }
+
+/* Space Junkz restored animated battle: 3D Expansion section */
+.threeDReskinHero .battlePreviewVisual{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:12px;
+  min-height:0;
+  align-content:start;
+}
+.battlePreviewVisual .reskinStage{
+  position:relative;
+  min-height:clamp(280px,32vw,390px);
+  overflow:hidden;
+  border:1px solid rgba(91,231,255,.28);
+  border-radius:16px;
+  background:radial-gradient(ellipse at 30% 50%,rgba(0,174,255,.17),transparent 70%),#030817;
+  box-shadow:inset 0 0 36px rgba(0,0,0,.5);
+}
+.battlePreviewVisual .battleSceneFallback{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.63);
+  transition:opacity .3s ease;
+}
+.battlePreviewVisual .reskinBattle[data-ready="true"] ~ .battleSceneFallback{
+  opacity:0;
+}
+.battlePreviewVisual .reskinBattle{
+  position:absolute;
+  z-index:1;
+  inset:0;
+}
+.battlePreviewVisual .reskinBattle canvas{
+  display:block;
+  width:100%!important;
+  height:100%!important;
+}
+.battlePreviewVisual .reskinStageHud{
+  position:absolute;
+  z-index:2;
+  right:10px;
+  bottom:10px;
+  left:10px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px;
+  pointer-events:none;
+}
+.battlePreviewVisual .reskinStageHud span,
+.battlePreviewVisual .reskinStageHud strong{
+  padding:7px 9px;
+  border:1px solid rgba(255,255,255,.17);
+  border-radius:999px;
+  background:rgba(1,5,16,.8);
+  backdrop-filter:blur(6px);
+  font-size:9px;
+  letter-spacing:.08em;
+}
+.battlePreviewVisual .reskinStageHud span{color:var(--a1);}
+.battlePreviewVisual .reskinStageHud strong{color:#fff;}
+.battlePreviewVisual .glbPreviewGrid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  min-width:0;
+}
+.battlePreviewVisual .glbSpinViewer{min-height:195px;}
+@media(max-width:560px){
+  .battlePreviewVisual .reskinStage{min-height:290px;}
+  .battlePreviewVisual .glbSpinViewer{min-height:170px;}
+  .battlePreviewVisual .reskinStageHud span,
+  .battlePreviewVisual .reskinStageHud strong{font-size:8px;}
+}
