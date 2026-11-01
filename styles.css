@@ -2103,3 +2103,9 @@ button:focus-visible,a:focus-visible{outline:2px solid #ffd65a;outline-offset:4p
 #battleLaunch{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;min-height:50px;padding:0 25px;border:1px solid #92eeec;border-radius:6px;background:#071727e8;color:#edffff;font:800 14px system-ui;cursor:pointer;box-shadow:0 0 35px #5be7ff33}
 #battleLaunch[hidden],#battlePause[hidden]{display:none}#battleLaunch:disabled{cursor:wait;opacity:.8}
 @media(max-width:700px){.landingBattle{height:400px}.threeDReskinHero{padding:20px 12px}.battleBar{font-size:8px}}
+
+/* Actual game-model portraits replace the old remote sprite archive. */
+.bossCard{display:flex;flex-direction:column;min-width:0;padding:0;overflow:hidden;text-align:left;border:1px solid #9ad7eb26;border-radius:12px;background:#050c17;color:#dbf4ff;cursor:pointer}
+.bossGallery .bossCard img{display:block;width:100%;height:auto;aspect-ratio:640/540;object-fit:contain;border:0;border-radius:0;transform:none}
+.bossCard span{padding:10px 11px 13px;font:700 11px/1.45 system-ui}.bossCard:hover{border-color:#68d8e8;background:#0a1c2a}.bossCard:focus-visible{outline:2px solid #ffd65a;outline-offset:3px}
+button.bossClose{border:0;background:#071526bb;color:#fff;cursor:pointer;min-width:44px;min-height:44px;z-index:1}

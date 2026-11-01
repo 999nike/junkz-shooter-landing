@@ -1,0 +1,72 @@
+[
+  {
+    "id": "cancer",
+    "label": "Cancer Dreadnought",
+    "source": "src/game/three/assets/sectors/mission2-cancer-dreadnaught.glb",
+    "sourceSHA256": "b83c35027c7c0043d47a133a56a4541fd332e3809821eadc1bd8a7fe8f8d22dd",
+    "triangles": 31999
+  },
+  {
+    "id": "drax",
+    "label": "Drax Fighter Ace",
+    "source": "src/game/three/assets/sectors/mission2-drax-fighter-ace.glb",
+    "sourceSHA256": "55b790044e463fbcb936ab4431a2d79ece65d04f85c9263ea7e35028b24f3919",
+    "triangles": 32000
+  },
+  {
+    "id": "leo",
+    "label": "Leo Siege Cruiser",
+    "source": "src/game/three/assets/sectors/mission2-leo-siege-cruiser.glb",
+    "sourceSHA256": "9dd2bcfee16fad16beedc93783366743ff2db1f94d269bb1ccb704f633005e9d",
+    "triangles": 31939
+  },
+  {
+    "id": "scorpio",
+    "label": "Scorpio Assault Carrier",
+    "source": "src/game/three/assets/sectors/mission2-scorpio-assault-carrier.glb",
+    "sourceSHA256": "43268dbe0baa44aa62dfcc2066db15a44588e6689a65fb4675b993d3f49e3b31",
+    "triangles": 31999
+  },
+  {
+    "id": "virgo",
+    "label": "Virgo Flagship",
+    "source": "src/game/three/assets/sectors/mission2-virgo-flagship.glb",
+    "sourceSHA256": "75d98c4c00fc4fc487ff8026ca23ed5b0c323a6f3264087cc659ffc47b5c8db7",
+    "triangles": 32000
+  },
+  {
+    "id": "ashfang",
+    "label": "Ashfang Interceptor",
+    "source": "src/game/three/assets/sectors/mission3-boss-1-ashfang-interceptor.glb",
+    "sourceSHA256": "5e52178dd92bd4e450ee4e1e8268effe297cf96b60b4ee4e9cb7a0c351fd2155",
+    "triangles": 31994
+  },
+  {
+    "id": "hellfire",
+    "label": "Hellfire Cruiser",
+    "source": "src/game/three/assets/sectors/mission3-boss-3-hellfire-cruiser.glb",
+    "sourceSHA256": "9c7e3256d00cc4169df3f69a7359c206ea70088184ee30d3e60a581b91b9ef4a",
+    "triangles": 31993
+  },
+  {
+    "id": "crimson",
+    "label": "Crimson Dreadnought",
+    "source": "src/game/three/assets/sectors/mission3-boss-5-crimson-dreadnought.glb",
+    "sourceSHA256": "092c9bf4036b591fda2ee032570254e8a0a42e2ff97ff245d6f424fcf1cd9e75",
+    "triangles": 32000
+  },
+  {
+    "id": "solar",
+    "label": "Solar Warden",
+    "source": "src/game/three/assets/m7/rare-solar-warden.glb",
+    "sourceSHA256": "678197357d83378e3ebd551e62063131b517057e6f5a68aaf300ce4546ef4536",
+    "triangles": 19999
+  },
+  {
+    "id": "reaper",
+    "label": "Gilded Reaper",
+    "source": "src/game/three/assets/m7/rare-gilded-reaper.glb",
+    "sourceSHA256": "310b10288414d4baf62f81cdfe0569530a66c168a1997300e263c82bfcf5c4cd",
+    "triangles": 19999
+  }
+]

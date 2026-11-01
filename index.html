@@ -356,21 +356,18 @@
       </div>
 
       <div class="bossGallery">
-        <img src="https://cdn.jsdelivr.net/gh/999nike/space-junkz-shooter@eb14a0a9194486f083fc6b9f3f8ec0be041d51ee/src/game/assets/boss/AlphaFighter.png" alt="Alpha Fighter" loading="lazy">
-        <img src="https://cdn.jsdelivr.net/gh/999nike/space-junkz-shooter@eb14a0a9194486f083fc6b9f3f8ec0be041d51ee/src/game/assets/enemysmall/ghostspitother.png" alt="Ghost Spitter" loading="lazy">
-        <img src="https://cdn.jsdelivr.net/gh/999nike/space-junkz-shooter@eb14a0a9194486f083fc6b9f3f8ec0be041d51ee/src/game/assets/boss/lvl2bossreplacement.png" alt="Level 2 Boss" loading="lazy">
-        <img src="https://cdn.jsdelivr.net/gh/999nike/space-junkz-shooter@eb14a0a9194486f083fc6b9f3f8ec0be041d51ee/src/game/assets/boss/lvl5bosses.png" alt="Level 5 Bosses" loading="lazy">
-        <img src="https://cdn.jsdelivr.net/gh/999nike/space-junkz-shooter@eb14a0a9194486f083fc6b9f3f8ec0be041d51ee/src/game/assets/boss/oldCANCER12.png" alt="Cancer Prime" loading="lazy">
-        <img src="https://cdn.jsdelivr.net/gh/999nike/space-junkz-shooter@eb14a0a9194486f083fc6b9f3f8ec0be041d51ee/src/game/assets/boss/oldCANCER2.png" alt="Cancer Siegecraft" loading="lazy">
-        <img src="https://cdn.jsdelivr.net/gh/999nike/space-junkz-shooter@eb14a0a9194486f083fc6b9f3f8ec0be041d51ee/src/game/assets/boss/fighterspr1.png" alt="Drax Fighter" loading="lazy">
-        <img src="https://cdn.jsdelivr.net/gh/999nike/space-junkz-shooter@eb14a0a9194486f083fc6b9f3f8ec0be041d51ee/src/game/assets/boss/oldSCORPIO2.png" alt="Scorpio War Machine" loading="lazy">
-        <img src="https://cdn.jsdelivr.net/gh/999nike/space-junkz-shooter@eb14a0a9194486f083fc6b9f3f8ec0be041d51ee/src/game/assets/boss/oldVIRGO12.png" alt="Virgo Vanguard" loading="lazy">
-        <img src="https://cdn.jsdelivr.net/gh/999nike/space-junkz-shooter@eb14a0a9194486f083fc6b9f3f8ec0be041d51ee/src/game/assets/boss/void_boss_lvl5.png" alt="Void Boss" loading="lazy">
+        <button class="bossCard" type="button" data-boss-name="Cancer Dreadnought" aria-label="View Cancer Dreadnought model snapshot"><img src="/assets/images/bosses/cancer.webp" alt="" width="640" height="540" loading="lazy" decoding="async"><span>Cancer Dreadnought</span></button>
+        <button class="bossCard" type="button" data-boss-name="Drax Fighter Ace" aria-label="View Drax Fighter Ace model snapshot"><img src="/assets/images/bosses/drax.webp" alt="" width="640" height="540" loading="lazy" decoding="async"><span>Drax Fighter Ace</span></button>
+        <button class="bossCard" type="button" data-boss-name="Leo Siege Cruiser" aria-label="View Leo Siege Cruiser model snapshot"><img src="/assets/images/bosses/leo.webp" alt="" width="640" height="540" loading="lazy" decoding="async"><span>Leo Siege Cruiser</span></button>
+        <button class="bossCard" type="button" data-boss-name="Scorpio Assault Carrier" aria-label="View Scorpio Assault Carrier model snapshot"><img src="/assets/images/bosses/scorpio.webp" alt="" width="640" height="540" loading="lazy" decoding="async"><span>Scorpio Assault Carrier</span></button>
+        <button class="bossCard" type="button" data-boss-name="Virgo Flagship" aria-label="View Virgo Flagship model snapshot"><img src="/assets/images/bosses/virgo.webp" alt="" width="640" height="540" loading="lazy" decoding="async"><span>Virgo Flagship</span></button>
+        <button class="bossCard" type="button" data-boss-name="Ashfang Interceptor" aria-label="View Ashfang Interceptor model snapshot"><img src="/assets/images/bosses/ashfang.webp" alt="" width="640" height="540" loading="lazy" decoding="async"><span>Ashfang Interceptor</span></button>
+        <button class="bossCard" type="button" data-boss-name="Hellfire Cruiser" aria-label="View Hellfire Cruiser model snapshot"><img src="/assets/images/bosses/hellfire.webp" alt="" width="640" height="540" loading="lazy" decoding="async"><span>Hellfire Cruiser</span></button>
+        <button class="bossCard" type="button" data-boss-name="Crimson Dreadnought" aria-label="View Crimson Dreadnought model snapshot"><img src="/assets/images/bosses/crimson.webp" alt="" width="640" height="540" loading="lazy" decoding="async"><span>Crimson Dreadnought</span></button>
+        <button class="bossCard" type="button" data-boss-name="Solar Warden" aria-label="View Solar Warden model snapshot"><img src="/assets/images/bosses/solar.webp" alt="" width="640" height="540" loading="lazy" decoding="async"><span>Solar Warden</span></button>
+        <button class="bossCard" type="button" data-boss-name="Gilded Reaper" aria-label="View Gilded Reaper model snapshot"><img src="/assets/images/bosses/reaper.webp" alt="" width="640" height="540" loading="lazy" decoding="async"><span>Gilded Reaper</span></button>
       </div>
-
-      <p class="bossDesc">
-        The original encounter-art archive. These designs helped shape the game’s move from its 2D beginnings into today’s 3D battles. Select an image to inspect it.
-      </p>
+      <p class="bossDesc">Snapshots rendered from the actual 3D boss models used in Space Junkz. Select a ship for a larger view.</p>
 
     </section>
 
@@ -524,39 +521,17 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
-<div id="bossLightbox" class="bossLightbox">
-  <span class="bossClose">&times;</span>
+<div id="bossLightbox" class="bossLightbox" role="dialog" aria-modal="true" aria-label="Boss model snapshot" aria-hidden="true">
+  <button type="button" class="bossClose" aria-label="Close boss snapshot">&times;</button>
   <img id="bossLarge" src="" alt="">
 </div>
 
 <script>
-(function(){
-
-const lightbox=document.getElementById("bossLightbox");
-const large=document.getElementById("bossLarge");
-const close=document.querySelector(".bossClose");
-
-document.querySelectorAll(".bossGallery img").forEach(img=>{
-    img.onclick=()=>{
-        large.src=img.src;
-        lightbox.classList.add("show");
-    };
-});
-
-close.onclick=()=>lightbox.classList.remove("show");
-
-lightbox.onclick=(e)=>{
-    if(e.target===lightbox){
-        lightbox.classList.remove("show");
-    }
-};
-
-document.addEventListener("keydown",(e)=>{
-    if(e.key==="Escape"){
-        lightbox.classList.remove("show");
-    }
-});
-
+(() => {
+ const box=document.getElementById('bossLightbox'),image=document.getElementById('bossLarge'),close=box.querySelector('.bossClose');let trigger;
+ const hide=()=>{box.classList.remove('show');box.setAttribute('aria-hidden','true');trigger?.focus({preventScroll:true});};
+ for(const button of document.querySelectorAll('.bossCard'))button.addEventListener('click',()=>{trigger=button;image.src=button.querySelector('img').src;image.alt=button.dataset.bossName+' - actual game 3D model snapshot';box.classList.add('show');box.setAttribute('aria-hidden','false');close.focus({preventScroll:true});});
+ close.addEventListener('click',hide);box.addEventListener('click',e=>{if(e.target===box)hide();});document.addEventListener('keydown',e=>{if(!box.classList.contains('show'))return;if(e.key==='Escape')hide();if(e.key==='Tab'){e.preventDefault();close.focus();}});
 })();
 </script>
 
