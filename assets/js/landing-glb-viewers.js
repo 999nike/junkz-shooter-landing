@@ -24,15 +24,29 @@
    const model=g.scene,box=new T.Box3().setFromObject(model),extent=box.getSize(new T.Vector3());model.position.sub(box.getCenter(new T.Vector3()));
    const wrap=new T.Group();wrap.add(model);wrap.scale.setScalar(size/Math.max(extent.x,extent.y,extent.z));wrap.rotation.y=yaw;root.add(wrap);resolve(wrap);
   },event=>{if(event.total)status.textContent='Loading full-detail fleet · '+Math.round(event.loaded/event.total*100)+'%';},reject));}
-  const route=new T.CatmullRomCurve3([[-4,0,4],[-6,.5,1],[-4,1,-2],[-1,.5,-1],[0,0,3],[-2,0,5]].map(p=>new T.Vector3(...p)),true,'catmullrom',.45);
-  const enemyRoute=new T.CatmullRomCurve3([[6,1,-4],[7,1,-1],[5,.5,1],[4,.5,-1]].map(p=>new T.Vector3(...p)),true,'catmullrom',.4);
+  const choreography=window.LandingFlightPaths,paths=choreography.create(T),route=paths.player;
   const pNext=new T.Vector3(),direction=new T.Vector3(),targetDirection=new T.Vector3(),orbitNext=new T.Vector3();
-  function pose(){
-   const u=(time/35+.35)%1;titan.position.copy(route.getPointAt(u));pNext.copy(route.getPointAt((u+.004)%1));titan.lookAt(pNext);titan.rotateZ(Math.sin(time*.55)*.12);
-   boss.position.copy(enemyRoute.getPointAt((time/55+.1)%1));boss.lookAt(titan.position);boss.rotateZ(Math.sin(time*.25)*.045);
-   for(let i=0;i<2;i++){const w=wings[i],a=time*.65+i*Math.PI;
-    w.position.copy(titan.position).add(new T.Vector3(Math.cos(a)*4.5,.65+Math.sin(a)*.35,Math.sin(a)*3.2));
-    orbitNext.copy(pNext).add(new T.Vector3(Math.cos(a+.04)*4.5,.65+Math.sin(a+.04)*.35,Math.sin(a+.04)*3.2));w.lookAt(orbitNext);w.rotateZ(-.25);
+  const screenUp=new T.Vector3(0,25,-9).normalize(),screenOut=new T.Vector3(0,9,25).normalize();
+  const mapFlight=v=>{const y=v.y,z=v.z;return v.set(v.x,screenUp.y*y+screenOut.y*z,screenUp.z*y+screenOut.z*z);};
+  const planar=new T.Vector3(),ahead=new T.Vector3(),look=new T.Vector3();let bossAimBlend=0,bossRotationReady=false;
+  function pose(dt=0){
+   const t=time%12,u=choreography.playerProgress(t),enemyRoute=host.clientWidth<700?paths.bossMobile:paths.bossDesktop;
+   titan.position.copy(mapFlight(route.getPointAt(u)));boss.position.copy(mapFlight(enemyRoute.getPointAt(choreography.bossProgress(t))));
+   planar.copy(route.getTangentAt(u)).normalize();ahead.copy(route.getTangentAt(Math.min(1,u+.006))).normalize();const turn=planar.x*ahead.y-planar.y*ahead.x;
+   const aimWeight=Math.max(choreography.pulse(t,1.95,1.55),choreography.pulse(t,8.85,1.45))*.68;
+   direction.copy(mapFlight(planar));targetDirection.copy(boss.position).sub(titan.position).normalize();direction.lerp(targetDirection,aimWeight).normalize();
+   titan.up.copy(screenOut);titan.lookAt(look.copy(titan.position).add(direction));
+   const escape=choreography.pulse(t,6.45,2.7)*Math.sin((t-6.45)*4.2)*.58;
+   titan.rotateZ((T.MathUtils.clamp(turn*24,-.72,.72)+escape)*(1-aimWeight*.72));
+   bossAimBlend+=(choreography.pulse(t,3.45,3.35)*.8-bossAimBlend)*(1-Math.exp(-dt*2.25));
+   direction.copy(mapFlight(enemyRoute.getTangentAt(choreography.bossProgress(t)))).normalize();targetDirection.copy(titan.position).sub(boss.position).normalize();direction.lerp(targetDirection,bossAimBlend).normalize();
+   const previous=boss.quaternion.clone();boss.up.copy(screenOut);boss.lookAt(look.copy(boss.position).add(direction));if(bossRotationReady)boss.quaternion.slerpQuaternions(previous,boss.quaternion.clone(),1-Math.exp(-dt*.95));bossRotationReady=true;
+   boss.rotateZ(Math.sin(t*.92)*.09+Math.sin(t*1.73+.8)*.023);
+   const next=choreography.playerProgress(Math.min(11.999,t+.04));pNext.copy(mapFlight(route.getPointAt(next)));
+   titan.visible=t>.025&&t<11.975;
+   for(let i=0;i<2;i++){const w=wings[i],angle=time*.65+i*Math.PI;w.visible=titan.visible;
+    w.position.copy(titan.position).add(new T.Vector3(Math.cos(angle)*4.5,.65+Math.sin(angle)*.35,Math.sin(angle)*3.2));
+    orbitNext.copy(pNext).add(new T.Vector3(Math.cos(angle+.04)*4.5,.65+Math.sin(angle+.04)*.35,Math.sin(angle+.04)*3.2));w.lookAt(orbitNext);w.rotateZ(-.25);
    }
    planet.rotation.y=time*.004;planet.rotation.z=.12;
   }
@@ -48,18 +62,18 @@
   const sparkGeo=new T.BufferGeometry(),sparkPositions=new Float32Array(64*3),sparks=Array.from({length:64},()=>({age:0,p:new T.Vector3(),v:new T.Vector3()}));sparkPositions.fill(10000);sparkGeo.setAttribute('position',new T.BufferAttribute(sparkPositions,3));scene.add(new T.Points(sparkGeo,new T.PointsMaterial({color:0xffc767,size:.11,transparent:true,opacity:.8,blending:T.AdditiveBlending,depthWrite:false})));
   // Four warm plumes behind the flagship, not a separate mock engine model.
   const plumeGeo=new T.ConeGeometry(.1,.9,8),plumeMat=new T.MeshBasicMaterial({color:0xffb14c,transparent:true,opacity:.65,depthWrite:false,blending:T.AdditiveBlending});
-  const flames=[];for(const x of [-.25,.25])for(const y of [-.22,.22]){const flame=new T.Mesh(plumeGeo,plumeMat);flame.rotation.x=-Math.PI/2;flame.position.set(x,y,-1.45);titan.add(flame);flames.push(flame);}
+  const flames=[];for(const x of [-.25,.25])for(const y of [-.22,.22]){const flame=new T.Mesh(plumeGeo,plumeMat);flame.rotation.x=-Math.PI/2;flame.position.set(x,y,-1.45);titan.add(flame);flame.position.multiplyScalar(.75);flame.scale.setScalar(.75);flames.push(flame);}
   let nextShot=0,cursor=0;
   function fire(source,target,type,force=false){
    direction.copy(forward).applyQuaternion(source.quaternion);targetDirection.copy(target.position).sub(source.position).normalize();
-   if(!force&&direction.dot(targetDirection)<.55)return;
+   if(!source.visible||(!force&&direction.dot(targetDirection)<.55))return;
    const b=bolts.find(b=>b.type===type&&b.age<=0);if(!b)return;b.group.position.copy(source.position).addScaledVector(direction,source===titan?1.4:.6);
    b.velocity.copy(target.position).sub(b.group.position).normalize().multiplyScalar(type?9:15);b.group.quaternion.setFromUnitVectors(axis,b.velocity.clone().normalize());b.target=target;b.age=2;b.group.visible=true;
   }
   function burst(position){for(let i=0;i<10;i++){const s=sparks[cursor++%sparks.length];s.age=.4;s.p.copy(position);s.v.set((random()-.5)*3,(random()-.5)*3,(random()-.5)*3);}}
   function draw(now=0){frame=0;if(!ready||!visible||document.hidden)return;
    const dt=Math.min((now-last)/1000||0,.05);if(!paused&&now-last<1000/30){frame=requestAnimationFrame(draw);return;}last=now;
-   if(!paused){time+=dt;pose();flames.forEach((f,i)=>f.scale.y=.85+Math.sin(time*24+i)*.18);
+   if(!paused){time+=dt;pose(dt);flames.forEach((f,i)=>f.scale.y=(.85+Math.sin(time*24+i)*.18)*.75);
     nextShot-=dt;if(nextShot<=0){fire(titan,boss,0);for(const w of wings)fire(w,boss,0);fire(boss,titan,1);nextShot=.15;}
     for(const b of bolts)if(b.age>0){b.age-=dt;b.group.position.addScaledVector(b.velocity,dt);const hit=b.group.position.distanceTo(b.target.position)<(b.target===boss?1.65:1.3);if(hit)burst(b.group.position);if(hit||b.age<=0){b.age=0;b.group.visible=false;}}
     for(let i=0;i<sparks.length;i++){const s=sparks[i];s.age-=dt;if(s.age>0){s.p.addScaledVector(s.v,dt);sparkPositions.set(s.p.toArray(),i*3);}else sparkPositions.set([10000,10000,10000],i*3);}sparkGeo.attributes.position.needsUpdate=true;
@@ -70,7 +84,7 @@
   const resize=()=>{const w=host.clientWidth,h=host.clientHeight;camera.aspect=w/h;const distance=Math.max(1,1.2/camera.aspect);camera.position.set(0,9*distance,24*distance);camera.lookAt(focus);camera.updateProjectionMatrix();renderer.setPixelRatio(Math.min(devicePixelRatio||1,matchMedia('(pointer:coarse)').matches?1:1.25));renderer.setSize(w,h,false);resume();};new ResizeObserver(resize).observe(host);resize();pose();
   Object.defineProperty(host,'battleSnapshot',{value:()=>({time,titan:titan.position.toArray(),escorts:wings.map(w=>w.position.toArray()),boss:boss.position.toArray(),paused})});
   const wingLoad=load('/assets/models/interceptor.glb',wings[0],.85,Math.PI).then(w=>wings[1].add(w.clone(true)));
-  Promise.all([load(media+'shop/titan.glb',titan,7.2,Math.PI/2),load(media+'m23/nebula.glb',boss,7.5,Math.PI/2),load(media+'m23/backdrop-planet.glb',planet,32),wingLoad]).then(()=>{
+  Promise.all([load(media+'shop/titan.glb',titan,5.4,Math.PI/2),load(media+'m23/nebula.glb',boss,5.625,Math.PI/2),load(media+'m23/backdrop-planet.glb',planet,32),wingLoad]).then(()=>{
    ready=true;host.dataset.ready='true';host.dataset.actors='Titan Prime,2 X-fighters,Nebula Warship,planet';launch.hidden=true;button.hidden=false;status.textContent='TITAN PRIME / NEBULA WARSHIP';resize();
   }).catch(()=>{status.textContent='Fleet preview unavailable · refresh to retry';renderer.domElement.hidden=true;launch.hidden=true;});
   button.addEventListener('click',()=>{paused=!paused;label();resume();});document.addEventListener('visibilitychange',resume);quiet.addEventListener('change',()=>{paused=quiet.matches;label();resume();});host.addEventListener('battle-visibility',resume);
