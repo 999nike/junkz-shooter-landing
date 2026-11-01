@@ -24,7 +24,7 @@ Current game reference: v3.48, published 31 October 2026. Landing refresh: 1 Nov
 
 ## Landing-page scene
 
-The battle is a staged showcase, not recorded gameplay. One lazy-loaded renderer uses two small, unchanged game GLBs (about 1.44 MiB combined), capped resolution and 30 FPS. It pauses offscreen or in a background tab, offers a pause button, respects reduced motion and keeps artwork as a fallback.
+The battle is a staged showcase, not recorded gameplay. One on-request renderer uses the full Titan Prime, two shared X-fighter escorts, a Nebula Warship and a background planet. The large models use the existing game media mirror (about 80 MB total if uncached); capped resolution and 30 FPS limit rendering cost. Titan and the boss have independent flight routes, with escorts orbiting Titan. It pauses offscreen or in a background tab, offers a pause button, respects reduced motion and keeps artwork as a fallback.
 
 Model provenance: assets/models/SOURCES.md. Gameplay/hangar images are labelled development captures. The original boss artwork remains as an archive of the earlier prototype.
 

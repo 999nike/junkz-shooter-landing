@@ -2096,3 +2096,10 @@ button:focus-visible,a:focus-visible{outline:2px solid #ffd65a;outline-offset:4p
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 .wizzCubeContainer,.wizzAssistantLauncher,.wizzAssistantAvatar,.wizzChatPanel{display:none!important}
+
+/* Give the flagship encounter the full width of its section. */
+.threeDReskinHero{grid-template-columns:1fr;gap:24px}.threeDReskinHero .updateCopy{max-width:900px}.battleFeature{width:100%}
+.landingBattle{height:560px;min-height:360px;border-radius:16px}.battleStatus{right:14px;line-height:1.5}
+#battleLaunch{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;min-height:50px;padding:0 25px;border:1px solid #92eeec;border-radius:6px;background:#071727e8;color:#edffff;font:800 14px system-ui;cursor:pointer;box-shadow:0 0 35px #5be7ff33}
+#battleLaunch[hidden],#battlePause[hidden]{display:none}#battleLaunch:disabled{cursor:wait;opacity:.8}
+@media(max-width:700px){.landingBattle{height:400px}.threeDReskinHero{padding:20px 12px}.battleBar{font-size:8px}}

@@ -458,7 +458,7 @@
           <span class="updateLabel">3D Battle Showcase</span>
           <h4>This is the Space Junkz we are building.</h4>
           <p>
-            A small staged encounter using models from the game: an X-fighter makes banking attack runs against the Void Sentinel. Bright weapon cores and impact flashes sit against deep space. This is a visual showcase, not recorded gameplay.
+            Titan Prime leads the formation, with two small X-fighters orbiting and making attack passes. Across the planet, a Nebula Warship follows its own patrol route. Watch the flagship bank, its escorts peel away and the crossfire light up the approach. A staged 3D battle using the game?s actual models.
           </p>
 
           <div class="updatePoints futurePoints">
@@ -469,12 +469,13 @@
         </div>
 
         <div class="battleFeature">
-          <div id="landingBattle" class="landingBattle" aria-label="Staged 3D X-fighter and Void Sentinel battle">
+          <div id="landingBattle" class="landingBattle" aria-label="Titan Prime and two X-fighter escorts battling a Nebula Warship above a planet">
             <img class="battleFallback" src="/assets/images/ChatGPT%20Image%20Aug%205%2C%202026%2C%2004_18_10%20AM.png" alt="Space Junkz battle concept artwork" loading="lazy" />
-            <span class="battleStatus" role="status">3D showcase loads as you approach</span>
+            <span class="battleStatus" role="status">Full-detail fleet ? about 80 MB, downloaded only when you launch</span>
+          <button id="battleLaunch" type="button">Load 3D battle</button>
           </div>
-          <div class="battleBar"><span>VOID SENTINEL / INTERCEPT</span><button id="battlePause" type="button" aria-pressed="false">Pause scene</button></div>
-          <small>Staged model showcase · original game assets · no gameplay input required</small>
+          <div class="battleBar"><span>TITAN PRIME / PLANETARY INTERCEPT</span><button id="battlePause" type="button" aria-pressed="false">Pause scene</button></div>
+          <small>Full Titan hull / two orbiting escorts / independent flight paths / distant planet</small>
         </div>
       </article>
 
@@ -567,7 +568,7 @@ document.addEventListener("keydown",(e)=>{
 <!-- Three.js powers the battle showcase only; public WIZZ chat is disabled. -->
 <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r146/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r146/examples/js/loaders/GLTFLoader.js"></script>
-<script src="/assets/js/landing-glb-viewers.js?v=2"></script>
+<script src="/assets/js/landing-glb-viewers.js?v=3"></script>
 
 <!-- production-deploy: restore-boss-gallery-simple-3d -->
 </html>
