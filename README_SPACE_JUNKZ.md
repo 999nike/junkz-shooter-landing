@@ -1,3 +1,45 @@
+# Space Junkz
+
+Landing page for the independently developed Space Junkz 3D space shooter by W.I.Z.Z. LAB STUDIOS / DevMaster / 999nike.
+
+Current game reference: v3.48, published 31 October 2026. Landing refresh: 1 November 2026.
+
+## Play and follow
+
+- Game: https://space-junkz-shooter.vercel.app/game.html (existing Vercel access rules apply).
+- Landing page: https://junkz-shooter-landing.vercel.app
+- Game repository: https://github.com/999nike/space-junkz-shooter
+
+## What is in the game now
+
+- JavaScript gameplay with Three.js/WebGL ships, bosses, scenery and effects.
+- Selectable top-down and elevated rear-follow views in supported missions.
+- Debris mazes, gates, changing elevations, defended objectives and arena encounters.
+- Expanding Helios and Morrow campaign sectors. The story and full campaign structure are still being tied together; not every numbered mission slot is complete.
+- Walkable hangar, navigation console, ship showroom, shared fittings and weapon research.
+- Seven temporary combat power stages, sidekicks, Scatter/Cluster Scatter and a temporary minigun pickup.
+- Rare, Legendary and Mythic caches; persistent coins, salvage, components, ownership and upgrades.
+- Pilot levels derived from lifetime XP, visible progress and gold level-up announcements. XP skill-tree gates are future balancing work.
+- Keyboard/mouse, controller and touch controls. Performance and balance remain in development; no universal FPS claim.
+
+## Landing-page scene
+
+The battle is a staged showcase, not recorded gameplay. One lazy-loaded renderer uses two small, unchanged game GLBs (about 1.44 MiB combined), capped resolution and 30 FPS. It pauses offscreen or in a background tab, offers a pause button, respects reduced motion and keeps artwork as a fallback.
+
+Model provenance: assets/models/SOURCES.md. Gameplay/hangar images are labelled development captures. The original boss artwork remains as an archive of the earlier prototype.
+
+## Local preview
+
+Serve this folder with a static HTTP server, for example `python -m http.server 8851 --bind 127.0.0.1`, then visit http://127.0.0.1:8851/.
+
+Existing social-browser link handling remains. WIZZ chat and cube are hidden and their scripts are not loaded, as requested. Never put temporary tester-share tokens or private game/API credentials into this public repository.
+
+---
+
+## Historical prototype documentation
+
+The archived notes below describe earlier builds and are retained for reference. Current status is above; old mission counts, renderer descriptions and planned features are not current release claims.
+
 # 🚀 Space Junkz
 
 <p align="center">
